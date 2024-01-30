@@ -74,21 +74,6 @@ Arguments:
 2. Output pathway for PDF
 
 
-## Figure 2F/G: PQ alluvials
-2 scripts required: prepare_data_pqarm.R and signature_alluvial_pqarm.R
-### prepare_data_pqarm.R
-Arguments:
-1. Signature qvalue 1vsAll output data (positive significant interactions)
-2. Signature qvalue 1vsAll output data (ALL interactions)
-3. Text file containing all female (XX) dataset names on a new line
-4. Text file containing all male (XY) dataset names on a new line
-5. Output pathway for RData
-6. Supplemental table S4-S8 (i.e. P/Q arm annotation)
-### signature_alluvial_pqarm.R
-Arguments:
-1. Pathway to Rdata output from prepare_data_pqarm.R
-
-
 ## Figure 3C: AB analysis
 Three scripts required: pt1_compartment.R, pt2_compartment_parallel.R, and pt3_merge_visualization.R
 ### pt1_data_prepration.R
@@ -111,3 +96,18 @@ One scripts required: 1E_K-means_clustering.R
 Arguments: 
 1. Pathway to input (cis and trans interaction frequency)
 2. Pathway tO output
+
+
+## Figure 5A/B: PQ alluvials
+2 scripts required: prepare_data_pqarm.R and signature_alluvial_pqarm.R
+### prepare_data_pqarm.R
+Arguments:
+1. Signature qvalue 1vsAll output data (positive significant interactions)
+2. Signature qvalue 1vsAll output data (ALL interactions)
+3. Text file containing all female (XX) dataset names on a new line
+4. Text file containing all male (XY) dataset names on a new line
+5. Output pathway for RData
+6. Supplemental table S4-S8 (i.e. P/Q arm annotation)
+### signature_alluvial_pqarm.R
+Arguments:
+1. Pathway to Rdata output from prepare_data_pqarm.R
