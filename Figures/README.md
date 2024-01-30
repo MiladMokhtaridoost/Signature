@@ -59,16 +59,13 @@ Arguments:
 7. Output pathway for PDF
 
 
-## Figure 2B: PQ analysis
-Two scripts required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
-### pt1_cooler_data_column_sum.R
+## Figure 2F: PQ analysis
+One script required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
+### 2F_p_q_arms_analysis.R
 Arguments:
-1. Cooler (1vsAll) output data
-2. Output pathway for txt file
-### pt2_2D_p_q_arms_analysis.R
-Arguments:
-1. Input pathway to the txt file from pt1
+1. Cooler data (1vsAll output)
 2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
+
 ## Figure 2E: PQ distribution
 One script required
 ### PQ_Interaction_Distrubtion.R
