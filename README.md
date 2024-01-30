@@ -4,7 +4,7 @@ Welcome to the GitHub repository for our project, "Inter-chromosomal contacts de
 
 ## 1. LWLR
 
-In the LWLR folder, you'll find the Local Weighted Linear Regression (LWLR) model. This non-parametric supervised learning approach systematically assesses relationships between all loci on all chromosomes using Hi-C/Omni-C data. The detailed information and instructions for implementing the LWLR model are provided within this folder.
+In the LWLR folder, you will find the Local Weighted Linear Regression (LWLR) model. This non-parametric supervised learning approach systematically assesses relationships between all loci on all chromosomes using Hi-C/Omni-C data. The detailed information and instructions for implementing the LWLR model are provided within this folder.
 
 ## 2. Community Detection
 
