@@ -66,7 +66,7 @@ Arguments:
 1. Cooler data (1vsAll output)
 2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
 
-## Figure 2E: PQ distribution
+## Figure 2G: PQ distribution
 One script required
 ### PQ_Interaction_Distrubtion.R
 Arguments:
