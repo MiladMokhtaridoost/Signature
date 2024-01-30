@@ -58,6 +58,24 @@ Arguments:
 6. RDS object from pt4 (zscore_df_sig_Y.rds)
 7. Output pathway for PDF
 
+## Figure 2B: Extracting domain sizes of NHCCs (positive) and non-interacting (negative) regions
+Two scripts required (1 one each positive and negative domain): 2B_domain_negative.R, 2B_domain_positive.R    
+### 2B_domain_negative.R
+Arguments:
+1. Pathway to the Signature output (significant negative, qvalue<0.05)
+2. Output pathway
+
+Output:
+A vector showing the frequency of each domain size in non-interacting regions
+
+### 2B_domain_positive.R
+Arguments:
+1. Pathway to the Signature output (significant positive, qvalue<0.05)
+2. Output pathway
+
+Output:
+A vector showing the frequency of each domain size in NHCC regions
+
 
 ## Figure 2D: A/B compartment analysis
 Three scripts required: pt1_compartment.R, pt2_compartment_parallel.R, and pt3_merge_visualization.R
