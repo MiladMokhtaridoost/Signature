@@ -59,22 +59,7 @@ Arguments:
 7. Output pathway for PDF
 
 
-## Figure 2F: PQ analysis
-One script required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
-### 2F_p_q_arms_analysis.R
-Arguments:
-1. Cooler data (1vsAll output)
-2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
-
-## Figure 2G: PQ distribution
-One script required
-### PQ_Interaction_Distrubtion.R
-Arguments:
-1. Signature qvalue 1vsAll output data (positive significant interactions)
-2. Output pathway for PDF
-
-
-## Figure 3C: AB analysis
+## Figure 2D: A/B compartment analysis
 Three scripts required: pt1_compartment.R, pt2_compartment_parallel.R, and pt3_merge_visualization.R
 ### pt1_data_prepration.R
 Arguments:
@@ -89,6 +74,21 @@ Arguments:
 Arguments:
 1. Pathway to the cell types (txt files)
 2. Pathway to the output (merged file)
+
+## Figure 2F: PQ analysis
+One script required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
+### 2F_p_q_arms_analysis.R
+Arguments:
+1. Cooler data (1vsAll output)
+2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
+
+## Figure 2G: PQ distribution
+One script required
+### PQ_Interaction_Distrubtion.R
+Arguments:
+1. Signature qvalue 1vsAll output data (positive significant interactions)
+2. Output pathway for PDF
+
 
 ## Figure 4A: K-means clustering
 One scripts required: 1E_K-means_clustering.R
