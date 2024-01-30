@@ -44,7 +44,7 @@ merger.awk
 
 
 # Running interaction analysis with Signature
-Signature runs with one simple shell script - the _user-friendly scheduler_ - which has been generated to submit your job in batches of 3 cell types. Larger batches can be submitted depnding on your computer's processing power and memory limits. 
+Signature runs with one simple shell script - the _user-friendly scheduler_ - which has been generated to submit your job in batches of 3 cell types. Larger batches can be submitted depnding on your HPC's processing power and memory limits (see Making user-specific modifications section). 
 
 To get started:
 1.	Split up the cells/datasets you want to analyze into batches of 3 and assign each batch a number
