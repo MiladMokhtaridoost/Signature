@@ -10,7 +10,7 @@ In the LWLR folder, you'll find the Local Weighted Linear Regression (LWLR) mode
 
 The Community Detection folder houses scripts related to our non-overlapping Community Detection approach, specifically the pycombo method. These scripts are designed to investigate hubs (communities) of genomic interactions using Hi-C/Omni-C data. Navigate to this folder for comprehensive details on running pycombo and interpreting the results.
 
-## 3. Figure
+## 3. Figures
 
 For those interested in the figures presented in the "Inter-chromosomal contacts demarcate genome topology along a spatial gradient" paper, the Figure folder contains the necessary scripts. These scripts involve a certain level of data pre-processing to generate the figures showcased in our research paper. Refer to this folder for insights into the data processing steps and to reproduce the figures.
 
