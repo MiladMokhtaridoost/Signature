@@ -1,4 +1,4 @@
-# Figures in Topological organization of the inter-chromosomal architecture across cell types
+# Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 
 ## Figure 1E: K-means clustering
 One scripts required: 1E_K-means_clustering.R
