@@ -3,11 +3,26 @@ Signature is a bioinformatics pipeline for determining significant genomic inter
 
 NOTE: After running cooler, _coolerdumpToSignature.py_ is required to convert the cooler format to a signature-friendly format.
 
+# Requirments
+### Runs on the Slurm Linux system (modify to your High Performance Computing system's guidelines)
+
+   - For trans analysis of 3 cells: ~16Gb memory, ~12hr runtime
+
+   - For cis analysis of 3 cells: ~100Gb, ~3 days runtime
+
+### Modules
+
+   - bedtools/2.24.0
+
+   - R/4.2.1
+
+   - python/2.7.9
+
 # User-friendly scheduler
 batch_create_signature_files.sh
 
 # Main Script
-Signature.v29_4DNuc_pipeline.sh
+Signature.v29.sh
 
 # Main script dependencies 
 trans.1vsAll_LWLR.R
@@ -26,12 +41,6 @@ lowest_zscore_pairwise.R
 
 merger.awk
 
-# Modules
-bedtools/2.24.0
-
-R/4.2.1
-
-python/2.7.9
 
 
 # Running interaction analysis with Signature
