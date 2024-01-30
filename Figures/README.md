@@ -1,12 +1,6 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 
-## Figure 1E: K-means clustering
-One scripts required: 1E_K-means_clustering.R
-### 1E_K-means_clustering.R
-Arguments: 
-1. Pathway to input (cis and trans interaction frequency)
-2. Pathway tO output
-## Figure 1H: Validation tickplots (edit by Jordan)
+## Figure 1J: Validation tickplots
 Two scripts required: part 1 (signature_validation_data_processing.R) and part 2 (signature_validation_graphs.R)
 ### signature_validation_data_processing.R 
 Arguments: 
@@ -31,6 +25,13 @@ Arguments:
     
 8. Output pathway
 
+
+## Figure 1E: K-means clustering
+One scripts required: 1E_K-means_clustering.R
+### 1E_K-means_clustering.R
+Arguments: 
+1. Pathway to input (cis and trans interaction frequency)
+2. Pathway tO output
 
 ## Figure 2A: Genome-wide contact matrix
 Five scripts required: pt1_genomewide_matrix_zscoreAll.R, pt2_genomewide_matrix_zscoreSig.R, pt3_genomewide_matrix_zscoreAll_split.R, pt4_genomewide_matrix_zscoreSig_split.R, and pt5_genomewide_matrix_graph.R
