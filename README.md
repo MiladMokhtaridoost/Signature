@@ -1,6 +1,6 @@
 # Project Overview
 
-Welcome to the GitHub repository for our project, "Inter-chromosomal contacts demarcate genome topology along a spatial gradient." This repository is organized into three main folders, each dedicated to a specific aspect of our research.
+Welcome to the GitHub repository for our project, "Inter-chromosomal contacts demarcate genome topology along a spatial gradient" This repository is organized into three main folders, each dedicated to a specific aspect of our research.
 
 ## 1. LWLR
 
