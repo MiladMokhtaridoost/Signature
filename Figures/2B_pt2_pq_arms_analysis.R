@@ -3,7 +3,7 @@
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
-data_subset <- args[1]
+data <- args[1]
 outpath <- args[2]
 
 #______Load required packages_____________________________________________
@@ -15,11 +15,15 @@ library(data.table)
 library(circlize)
 library(ggplot2)
 
+#______Get the data imported and ready_________________________________________
+
+row_sums <- rowSums(data[, -1], na.rm = TRUE) 
+data$Total <- row_sums
+print(data)
+df_1MB <- data[, c(1, ncol(data))] 
+
 #______Data prepration___________________________________________________
 
-df_1MB <- read.table(data_subset, header=TRUE)
-
-df_1MB
 colnames(df_1MB)[1] <- "ID"
 
 df_1MB <- df_1MB[-1, ]
