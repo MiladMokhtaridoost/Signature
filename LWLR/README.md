@@ -1,21 +1,16 @@
 # Topological organization of the inter-chromosomal architecture across cell types (Signature Pipeline)
 Signature is a bioinformatics pipeline for determining significant genomic interactions in Hi-C/Omni-C datasets. Signature is able to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements, the datasets you want to process, the genomic resolution, and the type of analysis. Signature v29 is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in the _user-friendly scheduler_ to match your High Performance Computing system's guidelines. 
 
-NOTE: After running cooler, _coolerdumpToSignature.py_ is required to convert the cooler format to a signature-friendly format.
-
 # Requirments
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system's guidelines)
 
    - For trans analysis of 3 cells: ~16Gb memory, ~12hr runtime
-
    - For cis analysis of 3 cells: ~100Gb, ~3 days runtime
 
 ### Modules
 
    - bedtools/2.24.0
-
    - R/4.2.1
-
    - python/2.7.9
 
 # User-friendly scheduler
