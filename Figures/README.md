@@ -26,13 +26,6 @@ Arguments:
 8. Output pathway
 
 
-## Figure 1E: K-means clustering
-One scripts required: 1E_K-means_clustering.R
-### 1E_K-means_clustering.R
-Arguments: 
-1. Pathway to input (cis and trans interaction frequency)
-2. Pathway tO output
-
 ## Figure 2A: Genome-wide contact matrix
 Five scripts required: pt1_genomewide_matrix_zscoreAll.R, pt2_genomewide_matrix_zscoreSig.R, pt3_genomewide_matrix_zscoreAll_split.R, pt4_genomewide_matrix_zscoreSig_split.R, and pt5_genomewide_matrix_graph.R
 ### pt1_genomewide_matrix_zscoreAll.R
@@ -114,3 +107,10 @@ Arguments:
 Arguments:
 1. Pathway to the cell types (txt files)
 2. Pathway to the output (merged file)
+
+## Figure 4A: K-means clustering
+One scripts required: 1E_K-means_clustering.R
+### 1E_K-means_clustering.R
+Arguments: 
+1. Pathway to input (cis and trans interaction frequency)
+2. Pathway tO output
