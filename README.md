@@ -1,3 +1,5 @@
+__*EDIT*__
+
 # Topological organization of the inter-chromosomal architecture across cell types (Signature Pipeline)
 Signature is a bioinformatics pipeline for determining significant genomic interactions in Hi-C/Omni-C datasets. Signature is able to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements, the datasets you want to process, the genomic resolution, and the type of analysis. Signature v29 is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in the _user-friendly scheduler_ to match your High Performance Computing system's guidelines. 
 
