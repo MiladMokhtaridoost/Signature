@@ -3,7 +3,7 @@
 Welcome to the _Signature_ repository! _Signature_ is a novel machine learning method designed to comprehensively and systematically detect Chromosomal interactions, specifically focusing on non-homologous chromosomal contacts (NHCCs). NHCCs refer to interactions between different chromosomes. This repository is organized into three main folders:
 
 # Pre-processing
-The Pre-processing folder is an essential component of the Signature repository. It includes scripts for data pre-processing, transforming raw Hi-C data into a format suitable for our algorithms. Follow the guidelines provided here to prepare your data efficiently.
+The Pre-processing folder is an essential component of the _Signature_ repository. It includes scripts for data pre-processing, transforming raw Hi-C data into a format suitable for our algorithms. Follow the guidelines provided here to prepare your data efficiently.
 
 # LWLR (Supervised Learning)
 The LWLR folder contains the Local Weighted Linear Regression (LWLR) approach, a supervised learning method within Signature. This approach assesses spatial interactions and their extent across various cell types. Detailed information and implementation instructions are provided within the LWLR folder.
