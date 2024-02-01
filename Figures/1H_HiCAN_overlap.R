@@ -1,3 +1,4 @@
+#_____Load required packages_____________________________________________________
 options(scipen=999)
 suppressMessages({
   library(ggplot2)
@@ -7,23 +8,22 @@ suppressMessages({
   library(ggVennDiagram)
   library(VennDiagram)
 })
-cat(date(),"\n-----------------------------\n")
 
 
+#_____Read in arguments_________________________________________________________
+args = commandArgs(trailingOnly = TRUE)
+
+hican_nhub <- read.table(args[1], header = T)
+hican_shub <- read.table(args[2], header = T)
+sign <- read.table(args[3], header = T)
+out <- args[4]
+ann_file <- args[5]
 
 #_____Prepare data______________________________________________________________
-
-# load data
-hican_nhub <- read.table("Z:/Jordan/signature/revisions/HiCAN/eight_cells_Nbasis_top100.txt", header = T)
-hican_shub <- read.table("Z:/Jordan/signature/revisions/HiCAN/eight_cells_Sbasis_top100.txt", header = T)
-sign_all <- read.table("Z:/Signature/results/merged_output/diploid/signature_trans1vsAll_1MB_merged_qvalue_pos.txt", header = T)
-sign_GM <- read.table("Z:/Jordan/signature/revisions/Signature_disease/output/GM12878_Arima.GM12878_Rao/GM12878_Arima.GM12878_Rao.trans1vsAll.1MB.qvalue.pos.txt", header = T)
 
 # filter to appropriate cell types
 hican_nhub <- hican_nhub %>% select(-c("GM23248", "WI38_raf"))
 hican_shub <- hican_shub %>% select(-c("GM23248", "WI38_raf"))
-sign_all <- sign_all[,c(1, grep("IMR90", colnames(sign_all)), grep("HMEC", colnames(sign_all)), grep("HUVEC", colnames(sign_all)), grep("NHEK", colnames(sign_all)), grep("HAEC", colnames(sign_all)))]
-sign <- merge(x = sign_all, y = sign_GM, by = "ID", all = TRUE)
 
 # split up interaction ID information into new columns
 sign$ID <- sub("B", "\\.B", as.character(sign$ID))
@@ -140,7 +140,7 @@ vd <- ggVennDiagram(gglist, set_size = 3, label_alpha = 0, label_size = 4, label
                     legend.text = element_text(face="plain", colour="black", size=8),
                     legend.position = NULL)
 
-ggsave("Z:/Jordan/signature/revisions/HiCAN/signature_vs_HiCAN_VD.pdf", width = 8, height = 6)
+ggsave(paste0(out,"/HiCAN_VD.pdf"), width = 8, height = 6)
 
 
 # get list of unique bins to extract genes later
@@ -171,7 +171,7 @@ genes_df <- data.frame("bins" = bbb,
 
 #_____Annotate with genes_______________________________________________________
 
-dat <- read.table("Z:/Jordan/signature/CD_gtex/output/annotated_geneIDs_trans1MB_all_bins.txt", sep = "\t", header = TRUE)
+dat <- read.table(ann_file, sep = "\t", header = TRUE)
 
 dat$bin_ID <- gsub(":",".",dat$bin_ID)
 dat$bin_ID <- gsub("-",".",dat$bin_ID)
@@ -187,7 +187,7 @@ for (b in 1:nrow(genes_df)){
 }
 
 # export
-write.table(genes_df, "Z:/Jordan/signature/revisions/HiCAN/full_overlap_list_annotated_geneIDs.txt", sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+write.table(genes_df, paste0(out,"/overlap_list_annotated_geneIDs.txt"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
 
 
 
@@ -200,19 +200,15 @@ rm(list = ls()) # clear environment
 #_____Prepare data______________________________________________________________
 
 # load data
-hican_nhub <- read.table("Z:/Jordan/signature/revisions/HiCAN/eight_cells_Nbasis_top100.txt", header = T)
-hican_shub <- read.table("Z:/Jordan/signature/revisions/HiCAN/eight_cells_Sbasis_top100.txt", header = T)
-sign_all <- read.table("Z:/Signature/results/merged_output/diploid/signature_trans1vsAll_1MB_merged_qvalue_pos.txt", header = T)
-sign_GM <- read.table("Z:/Jordan/signature/revisions/Signature_disease/output/GM12878_Arima.GM12878_Rao/GM12878_Arima.GM12878_Rao.trans1vsAll.1MB.qvalue.pos.txt", header = T)
+hican_nhub <- read.table(args[1], header = T)
+hican_shub <- read.table(args[2], header = T)
+sign <- read.table(args[3], header = T)
 
 # filter to appropriate cell types
 hican_nhub <- hican_nhub %>% select(-c("GM23248", "WI38_raf"))
 hican_shub <- hican_shub %>% select(-c("GM23248", "WI38_raf"))
-sign_all <- sign_all[,c(1, grep("IMR90", colnames(sign_all)), grep("HMEC", colnames(sign_all)), grep("HUVEC", colnames(sign_all)), grep("NHEK", colnames(sign_all)), grep("HAEC", colnames(sign_all)))]
-sign <- merge(x = sign_all, y = sign_GM, by = "ID", all = TRUE)
-sign <- sign[!rowSums(is.na(sign)) == length(colnames(sign))-1, ]   # remove interactions with only NAs (first column is ID)
 
-# filter to q < 0.01
+# filter to q < 0.0001
 for (c in 2:ncol(sign)){
   
   index <- which(sign[,c] > 0.0001)
@@ -336,7 +332,7 @@ vd <- ggVennDiagram(gglist, set_size = 3, label_alpha = 0, label_size = 4, label
         legend.text = element_text(face="plain", colour="black", size=8),
         legend.position = NULL)
 
-ggsave("Z:/Jordan/signature/revisions/HiCAN/output/signature_vs_HiCAN_VD.0001.pdf", width = 8, height = 6)
+ggsave(paste0(out,"/HiCAN_VD.0001.pdf"), width = 8, height = 6)
 
 
 # get list of unique bins to extract genes later
@@ -366,7 +362,7 @@ genes_df <- data.frame("bins" = bbb,
 
 #_____Annotate with genes_______________________________________________________
 
-dat <- read.table("Z:/Jordan/signature/CD_gtex/output/annotated_geneIDs_trans1MB_all_bins.txt", sep = "\t", header = TRUE)
+dat <- read.table(ann_file, sep = "\t", header = TRUE)
 
 dat$bin_ID <- gsub(":",".",dat$bin_ID)
 dat$bin_ID <- gsub("-",".",dat$bin_ID)
@@ -382,4 +378,4 @@ for (b in 1:nrow(genes_df)){
 }
 
 # export
-write.table(genes_df, "Z:/Jordan/signature/revisions/HiCAN/output/full_overlap_list_annotated_geneIDs.0001.txt", sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+write.table(genes_df, paste0(out,"/overlap_list_annotated_geneIDs.0001.txt"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
