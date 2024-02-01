@@ -4,8 +4,8 @@
 One script required: 1H_HiCAN_overlap.R
 ### 1H_HiCAN_overlap.R
 Arguments: 
-1. HiCAN's top 100 nucleolar loci (Figure 2B https://doi.org/10.1093/nar/gkad211)
-2. HiCAN's top 100 speckle loci (Figure 2B https://doi.org/10.1093/nar/gkad211)
+1. HiCAN's top 100 nucleolar loci (Figure 2B PMID: 37013988)
+2. HiCAN's top 100 speckle loci (Figure 2B PMID: 370139881)
 3. Signature qvalue output data (positive significant interactions) [GM12878]
 4. Pathway to output
 5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
@@ -14,7 +14,7 @@ Arguments:
 One script required: 1I_Sprite_overlap.R
 ### 1I_Sprite_overlap.R
 Arguments: 
-1. SPRITE's nucleolar and active hubs (Table S2 https://doi.org/10.1016/j.cell.2018.05.024)
+1. SPRITE's nucleolar and active hubs (Table S2 PMID: 29887377)
 2. Signature qvalue output data (positive significant interactions) [GM12878]
 3. Pathway to output
 4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
