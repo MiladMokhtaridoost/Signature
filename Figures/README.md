@@ -1,6 +1,6 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 
-## Figure 1G: Merfish data analysis
+## Figure 1G: Merfish comparison
 One script required: 1G_Merfish_data_analysis.R
 ### 1G_Merfish_data_analysis.R
 Arguments:
