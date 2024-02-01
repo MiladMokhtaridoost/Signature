@@ -1,3 +1,4 @@
+#_____Load required packages_____________________________________________________
 options(scipen=999)
 suppressMessages({
   library(ggplot2)
@@ -7,15 +8,18 @@ suppressMessages({
   library(ggVennDiagram)
   library(VennDiagram)
 })
-cat(date(),"\n-----------------------------\n")
+
+
+#_____Read in arguments_________________________________________________________
+args = commandArgs(trailingOnly = TRUE)
+
+sprite_nhub <- read.xlsx(args[1], sheet = "2D_nucleolar_hub_GM12878")
+sprite_ahub <- read.xlsx(args[1], sheet = "2E_active_hub_GM12878")
+sign_GM <- read.table(args[2], header = T)
+out <- args[3]
 
 
 #_____Prepare data______________________________________________________________
-
-# load data
-sprite_nhub <- read.xlsx("/hpf/largeprojects/pmaass/Jordan/signature/revisions/sprite/mmc2.xlsx", sheet = "2D_nucleolar_hub_GM12878")
-sprite_ahub <- read.xlsx("/hpf/largeprojects/pmaass/Jordan/signature/revisions/sprite/mmc2.xlsx", sheet = "2E_active_hub_GM12878")
-sign_GM <- read.table("/hpf/largeprojects/pmaass/Jordan/signature/revisions/Signature_disease/output/GM12878_Arima.GM12878_Rao/GM12878_Arima.GM12878_Rao.trans1vsAll.1MB.qvalue.pos.txt", header = T)
 
 # split up interaction ID information into new columns
 colnm <- c("chrA", "st1", "end1","chrB","st2","end2")
@@ -57,7 +61,7 @@ ggVennDiagram(gglist, set_size = 3, label_alpha = 0, label_size = 4) +
                     legend.text = element_text(face="plain", colour="black", size=8),
                     legend.position = NULL)
 
-ggsave("/hpf/largeprojects/pmaass/Jordan/signature/revisions/sprite/output/signature_vs_sprite_VD.pdf", width = 8, height = 6)
+ggsave(paste0(out,"/sprite_VD.pdf"), width = 8, height = 6)
 
 
 # get list of unique bins to extract genes later
@@ -88,7 +92,7 @@ genes_df <- data.frame("bins" = bbb,
 
 #_____Annotate with genes_______________________________________________________
 
-dat <- read.table("/hpf/largeprojects/pmaass/Jordan/signature/CD_gtex/output/annotated_geneIDs_trans1MB_all_bins.txt", header = T, sep = "\t")
+dat <- read.table(args[4], header = T, sep = "\t")
 
 dat$bin_ID <- gsub(":",".",dat$bin_ID)
 dat$bin_ID <- gsub("-",".",dat$bin_ID)
@@ -104,6 +108,6 @@ for (b in 1:nrow(genes_df)){
 }
 
 # export
-write.table(genes_df, "/hpf/largeprojects/pmaass/Jordan/signature/revisions/sprite/output/full_overlap_list_annotated_geneIDs.txt", sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
+write.table(genes_df, paste0(out,"/overlap_list_annotated_geneIDs.txt"), sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
 
 
