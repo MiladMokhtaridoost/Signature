@@ -1,11 +1,32 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 
+## Figure 1H: HiCAN comparison
+One script required: 1H_HiCAN_overlap.R
+### 1H_HiCAN_overlap.R
+Arguments: 
+1. HiCAN's top 100 loci - Nbasis
+2. HiCAN's top 100 loci - Sbasis
+3. Signature qvalue output data (positive significant interactions) [GM12878]
+4. Pathway to output
+5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
+
+## Figure 1I: SPRTIE comparison
+One script required: 1I_Sprite_overlap.R
+### 1I_Sprite_overlap.R
+Arguments: 
+1. HiCAN's top 100 loci - Nbasis
+2. HiCAN's top 100 loci - Sbasis
+3. Signature qvalue output data (positive significant interactions) [GM12878]
+4. Pathway to output
+5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
+
+
 ## Figure 1J: Validation tickplots
 Two scripts required: part 1 (signature_validation_data_processing.R) and part 2 (signature_validation_graphs.R)
 ### signature_validation_data_processing.R 
 Arguments: 
-1. Signature zscore 1vsAll output data (ALL interactions)
-2. Signature pvalue 1vsAll output data (ALL interactions)
+1. Signature zscore output data (ALL interactions)
+2. Signature pvalue output data (ALL interactions)
 3. Output pathway for RDS object
 4. Type of Signature analysis
 ### signature_validation_graphs.R
@@ -30,11 +51,11 @@ Arguments:
 Five scripts required: pt1_genomewide_matrix_zscoreAll.R, pt2_genomewide_matrix_zscoreSig.R, pt3_genomewide_matrix_zscoreAll_split.R, pt4_genomewide_matrix_zscoreSig_split.R, and pt5_genomewide_matrix_graph.R
 ### pt1_genomewide_matrix_zscoreAll.R
 Arguments:
-1. Signature zscore 1vsAll output data (ALL interactions)
+1. Signature zscore output data (ALL interactions)
 2. Output pathway for RDS object
 ### pt2_genomewide_matrix_zscoreSig.R
 Arguments:
-1. Signature zscore 1vsAll output data (ALL interactions)
+1. Signature zscore output data (ALL interactions)
 2. Output pathway for RDS object
 ### pt3_genomewide_matrix_zscoreAll_split.R
 Arguments:
@@ -44,7 +65,7 @@ Arguments:
 4. Text file containing all male (XY) dataset names on a new line
 ### pt4_genomewide_matrix_zscoreSig_split.R
 Arguments:
-1. Signature zscore 1vsAll output data (ALL interactions)
+1. Signature zscore output data (ALL interactions)
 2. Output pathway for RDS object
 3. Text file containing all female (XX) dataset names on a new line
 4. Text file containing all male (XY) dataset names on a new line
@@ -63,14 +84,15 @@ Arguments:
 One script required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
 ### 2F_p_q_arms_analysis.R
 Arguments:
-1. Cooler data (1vsAll output)
+1. Cooler data (output)
 2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
+
 
 ## Figure 2G: PQ distribution
 One script required
 ### PQ_Interaction_Distrubtion.R
 Arguments:
-1. Signature qvalue 1vsAll output data (positive significant interactions)
+1. Signature qvalue output data (positive significant interactions)
 2. Output pathway for PDF
 
 
@@ -78,7 +100,7 @@ Arguments:
 Three scripts required: pt1_compartment.R, pt2_compartment_parallel.R, and pt3_merge_visualization.R
 ### pt1_data_prepration.R
 Arguments:
-1. Pathway to Signature zscore 1vsAll data
+1. Pathway to Signature zscore data
 2. Output pathway
 ### pt2_compartment_parallel.R
 Arguments:
@@ -90,8 +112,9 @@ Arguments:
 1. Pathway to the cell types (txt files)
 2. Pathway to the output (merged file)
 
+
 ## Figure 4A: K-means clustering
-One scripts required: 1E_K-means_clustering.R
+One scripts required: 1E_Kmeans_clustering.R
 ### 1E_K-means_clustering.R
 Arguments: 
 1. Pathway to input (cis and trans interaction frequency)
@@ -102,8 +125,8 @@ Arguments:
 2 scripts required: prepare_data_pqarm.R and signature_alluvial_pqarm.R
 ### prepare_data_pqarm.R
 Arguments:
-1. Signature qvalue 1vsAll output data (positive significant interactions)
-2. Signature qvalue 1vsAll output data (ALL interactions)
+1. Signature qvalue output data (positive significant interactions)
+2. Signature qvalue output data (ALL interactions)
 3. Text file containing all female (XX) dataset names on a new line
 4. Text file containing all male (XY) dataset names on a new line
 5. Output pathway for RData
