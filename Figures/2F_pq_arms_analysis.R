@@ -1,9 +1,8 @@
 #______Read in arguments________________________________________________________
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
-data <- args[1]
+data <- read.table(args[1]
 outpath <- args[2]
 
 #______Load required packages_____________________________________________
@@ -12,7 +11,6 @@ library(dplyr)
 library(tidyr)
 library(parallel)
 library(data.table)
-library(circlize)
 library(ggplot2)
 
 #______Get the data imported and ready_________________________________________
