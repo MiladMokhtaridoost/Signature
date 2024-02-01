@@ -2,7 +2,7 @@
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
-data <- read.table(args[1]
+data <- read.table(args[1], header = T, sep = "\t")
 outpath <- args[2]
 
 #______Load required packages_____________________________________________
