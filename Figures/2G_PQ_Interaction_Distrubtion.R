@@ -1,6 +1,3 @@
-################################################################################
-#  PQ arm distribution of significant interactions (q-value < 0.05)
-################################################################################
 suppressMessages(library(ggplot2))
 suppressMessages(library(tidyr))
 suppressMessages(library(dplyr))
@@ -21,7 +18,7 @@ out <- args[2]
 
 #_____get data ready____________________________________________________________
 
-# read in input data (pos sig pval)
+# read in input data (pos sig qval)
 dat <- read.table(datafile, header = T)
 
 
@@ -29,7 +26,7 @@ dat <- read.table(datafile, header = T)
 dat$count <- NA 
 for (i in 1:nrow(dat)){dat$count[i] <- sum(!is.na(dat[i,2:ncol(dat)]))}
 
-# kep only ID and count
+# keep only ID and count
 dat <- dat[,c(1,64)]
 
 # split up ID
