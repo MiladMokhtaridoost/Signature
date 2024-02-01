@@ -4,7 +4,6 @@ library(tidyr)
 library(dplyr)
 library(data.table)
 
-)
 #_____Read in arguments_________________________________________________________
 
 args = commandArgs(trailingOnly = TRUE)
