@@ -1,19 +1,11 @@
-################################################################################
-# Venn Diagram for HiCAN and Signature (all cell types grouped, not cell-type-
-# specific analysis)
-#
-# Developed by: Jordan Chalmers
-#
-#
-################################################################################
 options(scipen=999)
 suppressMessages({
   library(ggplot2)
   library(dplyr)
   library(tidyr)
-  library(openxlsx, lib="Z:/Signature/pipeline/signature/scr/Rlib-4.2.1")
-  library(ggVennDiagram, lib="Z:/Signature/pipeline/signature/scr/Rlib-4.2.1")
-  library(VennDiagram, lib="Z:/Signature/pipeline/signature/scr/Rlib-4.2.1")
+  library(openxlsx)
+  library(ggVennDiagram)
+  library(VennDiagram)
 })
 cat(date(),"\n-----------------------------\n")
 
@@ -32,8 +24,6 @@ hican_nhub <- hican_nhub %>% select(-c("GM23248", "WI38_raf"))
 hican_shub <- hican_shub %>% select(-c("GM23248", "WI38_raf"))
 sign_all <- sign_all[,c(1, grep("IMR90", colnames(sign_all)), grep("HMEC", colnames(sign_all)), grep("HUVEC", colnames(sign_all)), grep("NHEK", colnames(sign_all)), grep("HAEC", colnames(sign_all)))]
 sign <- merge(x = sign_all, y = sign_GM, by = "ID", all = TRUE)
-# # keep only Rao data (or one of each cell type)
-# sign <- sign[,c(1,3,4,5,7,9,11)]
 
 # split up interaction ID information into new columns
 sign$ID <- sub("B", "\\.B", as.character(sign$ID))
@@ -44,8 +34,6 @@ sign$chrB <- gsub("B", "", sign$chrB)
 
 
 #_____Convert HiCAN res to Signature res________________________________________
-# rationale: only start OR end will match signature bin, so if divided by 1Mb and we get a decimal, it means it's the bin that needs to be converted
-# so if start has decimal, you need to round down to the closest 1MB, if end has decimal, you need to round up
 
 # convert hican_shub #
 df <- hican_shub
@@ -159,13 +147,6 @@ ggsave("Z:/Jordan/signature/revisions/HiCAN/signature_vs_HiCAN_VD.pdf", width = 
 all_overlaps <- calculate.overlap(gglist) 
 
 total <- lengths(all_overlaps)
-#index 1: a5 = all
-#index 2: a2 = sp+si
-#index 3: a4 = nu+si
-#index 4: a6 = sp+nu
-#index 5: a1 = si
-#index 6: a3 = sp
-#index 7: a7 = nu
 
 ggg <- c(rep("all",total[1]),
          rep("sp+si",total[2]),
@@ -185,9 +166,6 @@ bbb <- c(all_overlaps[[1]],
 
 genes_df <- data.frame("bins" = bbb,
                        "group" = ggg)
-
-# # export
-# write.table(genes_df, "Z:/Jordan/signature/revisions/HiCAN/full_overlap_list.txt", sep = "\t", quote = FALSE, row.names = FALSE, col.names = TRUE)
 
 
 
@@ -253,8 +231,6 @@ sign$chrB <- gsub("B", "", sign$chrB)
 
 
 #_____Convert HiCAN res to Signature res________________________________________
-# rationale: only start OR end will match signature bin, so if divided by 1Mb and we get a decimal, it means it's the bin that needs to be converted
-# so if start has decimal, you need to round down to the closest 1MB, if end has decimal, you need to round up
 
 # convert hican_shub #
 df <- hican_shub
@@ -367,13 +343,6 @@ ggsave("Z:/Jordan/signature/revisions/HiCAN/output/signature_vs_HiCAN_VD.0001.pd
 all_overlaps <- calculate.overlap(gglist) 
 
 total <- lengths(all_overlaps)
-#index 1: a5 = all
-#index 2: a2 = sp+si
-#index 3: a4 = nu+si
-#index 4: a6 = sp+nu
-#index 5: a1 = si
-#index 6: a3 = sp
-#index 7: a7 = nu
 
 ggg <- c(rep("all",total[1]),
          rep("sp+si",total[2]),
