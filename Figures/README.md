@@ -89,6 +89,22 @@ Arguments:
 7. Output pathway for PDF
 
 
+## Figure 2D: AB compartment analysis
+Three scripts required: 2D_pt1_data_prepration.R, 2D_pt2_compartment_parallel.R, and 2D_pt3_merge_visualization.R
+### 2D_pt1_data_prepration.R
+Arguments:
+1. Signature zscore output data (significant)
+2. Output pathway for the results
+### 2d_pt2_compartment_parallel.R
+Arguments:
+1. Index of cell types ($1 in the shell script)
+2. Output pathway (same pathway as the pt1_data_prepration.R)
+3. Pathway to aggregated compartment table for 62 cell types (Table S13)
+###  2D_pt3_merge_visualization.R   
+Arguments:
+1. Pathway to the cell types (txt files)
+2. Pathway to the output (merged file)
+
 ## Figure 2F: PQ arm interaction analysis
 One script required: 2F_pq_arms_analysis.R
 ### 2F_pq_arms_analysis.R
@@ -105,29 +121,11 @@ Arguments:
 2. Output pathway for PDF
 
 
-## Figure 2I: Telomeric and Centromeric analysis
-One script required: centromeric_telomeric_mapped_regions.R
-### centromeric_telomeric_mapped_regions.R
+## Figure 2I: Telomeric and centromeric analysis
+One script required: 2I_centromeric_telomeric_interactions.R (note: the pre-processing of data is same for figure 2J)
+### 2I_centromeric_telomeric_interactions.R
 Arguments:
-1. Pathway to Signature qvalue positive data
-2. The pre-processing of data is same for figure 2J
-
-
-## Figure 3C: AB compartment analysis
-Three scripts required: pt1_compartment.R, pt2_compartment_parallel.R, and pt3_merge_visualization.R
-### pt1_data_prepration.R
-Arguments:
-1. Pathway to Signature zscore data
-2. Output pathway for the results
-### pt2_compartment_parallel.R
-Arguments:
-1. Index of cell types ($1 in the shell script)
-2. Output pathway (same pathway as the pt1_data_prepration.R)
-3. Pathway to aggregated compartment table for 62 cell types (Table S13)
-###  pt3_merge_visualization.R   
-Arguments:
-1. Pathway to the cell types (txt files)
-2. Pathway to the output (merged file)
+1. Signature qvalue output data (positive significant interactions)
 
 
 ## Figure 4A: K-means clustering
