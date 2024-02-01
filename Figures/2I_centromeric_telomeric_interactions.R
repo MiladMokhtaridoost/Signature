@@ -107,7 +107,7 @@ chrInf$two_point_five_percent <- chrInf$five_percent/2
 chrInf$q_arm <-  chrInf$size - chrInf$five_percent
    
 #calculate q_arm 5% seperately for each chr
-   #If any of the unmapped region length or their summation is gereater than 2.5 percent of mapped length of chr then put NA for that value 
+   #If any of the unmapped region length or their summation is gereater than 2.5 percent of mapped length of chr then put NA 
    #chr1 
    chrInf$q_telo <- NA 
    chrInf$centromere_q_telo <- NA
