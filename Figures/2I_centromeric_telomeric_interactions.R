@@ -43,210 +43,68 @@ qvalue_pos <- qvalue_pos[,c(1,2,3,4,5,6,7)]
 #_____________________________________chromosome mapped regions_______________________
 #preparing chrInf table to find the mapping length of each chromosome 
 #unmapped reads calculated from signature output
-chrInf <- data.frame( chrom = c("chr1","chr2",
-                                "chr3","chr4",
-                                "chr5","chr6",
-                                "chr7","chrX",
-                                "chr8","chr9",
-                                "chr11","chr10",
-                                "chr12","chr13",
-                                "chr14","chr15",
-                                "chr16","chr17",
-                                "chr18","chr20",
-                                "chr19","chrY",
-                                "chr22","chr21"),
-                      centromere = c(123252373.5,93787431.5,
-                                     90856062,50074452.5,
-                                     48585285.5,60557102.5,
-                                     60058972.5,61016889,
-                                     45249872,43893383.5,
-                                     53454152,39800499.5,
-                                     35764400,17692000.5,
-                                     17117352,19037747.5,
-                                     36878628.5,25067566.5,
-                                     18464134,28099979.5,
-                                     26161912,10470308,
-                                     15520235.5,11917946),
-                      chrClass = c("Metacentric","Metacentric",
-                                   "Metacentric","Submetacentric",
-                                   "Submetacentric","Submetacentric",
-                                   "Submetacentric","Submetacentric",
-                                   "Submetacentric","Submetacentric",
-                                   "Submetacentric","Submetacentric",
-                                   "Submetacentric","Acrocentric",
-                                   "Acrocentric","Acrocentric",
-                                   "Metacentric","Submetacentric",
-                                   "Submetacentric","Metacentric",
-                                   "Metacentric","Acrocentric",
-                                   "Acrocentric","Acrocentric"),
-                      size = c(248956422,242193529,
-                               198295559,190214555,
-                               181538259,170805979,
-                               159345973,156040895,145138636,
-                               138394717,135086622,
-                               133797422,133275309,
-                               114364328,107043718,
-                               101991189,90338345,
-                               83257441,80373285,
-                               64444167,58617616,57227415,
-                               50818468,46709983))
+chrInf <- data.frame( chrom = c("chr1","chr2","chr3","chr4","chr5","chr6","chr7","chrX","chr8","chr9","chr11","chr10",
+                                "chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr20","chr19","chrY","chr22","chr21"),
+                      centromere = c(123252373.5,93787431.5,90856062,50074452.5,48585285.5,60557102.5,60058972.5,61016889,
+                                     45249872,43893383.5,53454152,39800499.5,35764400,17692000.5,17117352,19037747.5,
+                                     36878628.5,25067566.5,18464134,28099979.5,26161912,10470308,15520235.5,11917946),
+                      chrClass = c("Metacentric","Metacentric","Metacentric","Submetacentric","Submetacentric","Submetacentric",
+                                   "Submetacentric","Submetacentric","Submetacentric","Submetacentric","Submetacentric","Submetacentric",
+                                   "Submetacentric","Acrocentric","Acrocentric","Acrocentric","Metacentric","Submetacentric",
+                                   "Submetacentric","Metacentric","Metacentric","Acrocentric","Acrocentric","Acrocentric"),
+                      size = c(248956422,242193529,198295559,190214555,181538259,170805979,159345973,156040895,145138636,
+                               138394717,135086622,133797422,133275309,114364328,107043718,101991189,90338345,83257441,80373285,
+                               64444167,58617616,57227415,50818468,46709983))
 
-chrInf$st_centromere_unmapped <- c(120000000,92000000,
-                          91000000,50000000,
-                          47000000,59000000,
-                          58000000,59000000,
-                          44000000,43000000,
-                          51000000,40000000,
-                          35000000,16000000,
-                         16000000,17000000,
-                         36000000,23000000,
-                         15000000,26000000,
-                         25000000,10000000,
-                         13000000,11000000)
+chrInf$st_centromere_unmapped <- c(120000000,92000000,91000000,50000000,47000000,59000000,58000000,59000000,44000000,43000000,
+                                    51000000,40000000,35000000,16000000,16000000,17000000,36000000,23000000,15000000,26000000,
+                                    25000000,10000000,13000000,11000000)
 
-chrInf$end_centromere_unmapped <- c(143000000,94000000,
-                             94000000,52000000,
-                             49000000,60000000,
-                             61000000,62000000,
-                             46000000,68000000,
-                             54000000,41000000,
-                             37000000,19000000,
-                           19000000,25000000,
-                          46000000,26000000,
-                          21000000,28000000,
-                         27000000,11000000,
-                         16000000,13000000)
+chrInf$end_centromere_unmapped <- c(143000000,94000000,94000000,52000000,49000000,60000000,61000000,62000000,
+                                    46000000,68000000,54000000,41000000,37000000,19000000,19000000,25000000,
+                                    46000000,26000000,21000000,28000000,27000000,11000000,16000000,13000000)
   
-chrInf$st_unmapped_region1 <- c(144000000,87000000,
-                                  NA,189000000,
-                                  69000000,29000000,
-                                  142000000,0,
-                                  1000000,39000000,
-                                  1000000,38000000,
-                                  NA,0,
-                                  0,0,
-                                  15000000,0,
-                                  NA,NA,
-                                  54000000,0,
-                                  0,0)
+chrInf$st_unmapped_region1 <- c(144000000,87000000,NA,189000000,69000000,29000000,142000000,0,1000000,39000000,
+                                  1000000,38000000,NA,0,0,0,15000000,0,NA,NA,54000000,0,0,0)
                                   
-chrInf$end_unmapped_region1 <- c(145000000,88000000,
-                                   NA,190000000,
-                                   71000000,33000000,
-                                   144000000,3000000,
-                                   3000000,41000000,
-                                   2000000,39000000,
-                                   NA,19000000,
-                                   19000000, 25000000,
-                                  17000000,1000000,
-                                 NA, NA,
-                                   55000000,2000000,
-                                    11000000,  9000000
-                              
-                                   )
+chrInf$end_unmapped_region1 <- c(145000000,88000000,NA,190000000,71000000,33000000,144000000,3000000,
+                                   3000000,41000000,2000000,39000000,NA,19000000,19000000,25000000,
+                                  17000000,1000000,NA,NA,55000000,2000000,11000000, 9000000)
   
-chrInf$st_unmapped_region2 <- c(146000000,89000000,
-                                  NA,NA,
-                                  179000000,NA,
-                                  NA,NA,
-                                  7000000,NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  93000000, 28000000,
-                                 21000000, 36000000,
-                                 NA,NA,
-                                  NA,23000000,
-                                  18000000,NA
-                                  )
-  chrInf$end_unmapped_region2 <- c(147000000,91000000,
-                                   NA,NA,
-                                   180000000,NA,
-                                   NA,NA,
-                                   13000000,NA,
-                                   NA, NA,
-                                   NA,NA,
-                                   94000000,33000000,
-                                   23000000,39000000,
-                                   NA,NA,
-                                   NA, 26000000,
-                                  19000000,NA
-                                   
-                                   )
+chrInf$st_unmapped_region2 <- c(146000000,89000000,NA,NA,179000000,NA,NA,NA,7000000,NA,NA,NA,NA,NA,
+                                93000000, 28000000,21000000, 36000000,NA,NA,NA,23000000,18000000,NA)
+
+chrInf$end_unmapped_region2 <- c(147000000,91000000,NA,NA,180000000,NA,NA,NA,13000000,NA,NA, NA,NA,NA,
+                                 94000000,33000000,23000000,39000000,NA,NA,NA, 26000000,19000000,NA)
+
+chrInf$st_unmapped_region3 <- c(148000000,NA,NA,NA,NA,NA,NA,NA,39000000,NA,NA,NA,NA,NA, 106000000,NA,
+                                  32000000,46000000,NA,NA,NA,27000000,NA, NA)
+
+chrInf$end_unmapped_region3 <- c(150000000,NA,NA,NA,NA,NA,NA, NA,40000000,NA,NA,NA,NA,NA,107000000,
+                                 NA,34000000,47000000,NA,NA,NA,57000000,NA,NA)
   
-chrInf$st_unmapped_region3 <- c(148000000,NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  39000000,NA,
-                                  NA,NA,
-                                  NA,NA, 
-                                  106000000,NA,
-                                  32000000,46000000,
-                                  NA,NA,
-                                  NA,27000000,
-                                  NA, NA
-                                 
-                                  )
-  chrInf$end_unmapped_region3 <- c(150000000,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA, NA,
-                                   40000000,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   107000000,NA,
-                                   34000000,47000000,
-                                   NA,NA,
-                                   NA,57000000,
-                                   NA,NA
-                                   )
+chrInf$st_unmapped_region4 <- c(243000000,NA,NA,NA,NA,NA, NA,NA,NA,NA,NA,NA,
+                                  NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
   
-  chrInf$st_unmapped_region4 <- c(243000000,NA,
-                                  NA,NA,
-                                  NA,NA, 
-                                  NA,NA,
-                                  NA,NA, 
-                                  NA,NA,
-                                  NA, NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  NA,NA,
-                                  NA,NA
-                                  
-                                  )
-  
-  chrInf$end_unmapped_region4 <- c(244000000,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA, NA,
-                                   NA, NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA,NA,
-                                   NA,NA)
+chrInf$end_unmapped_region4 <- c(244000000,NA,NA,NA,NA,NA,NA,NA,NA, NA,NA, NA,
+                                   NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
   
 
- 
-
-  chrInf[is.na(chrInf)]<- 0
+chrInf[is.na(chrInf)]<- 0
                             
-   chrInf$unmapped_centromere_length <- (chrInf$end_centromere) - (chrInf$st_centromere) 
+chrInf$unmapped_centromere_length <- (chrInf$end_centromere) - (chrInf$st_centromere) 
    
-   chrInf$unmapped_region1_length <- (chrInf$end_unmapped_region1) - (chrInf$st_unmapped_region1)   
-   chrInf$unmapped_region2_length <- (chrInf$end_unmapped_region2) - (chrInf$st_unmapped_region2)  
-   chrInf$unmapped_region3_length <- (chrInf$end_unmapped_region3) - (chrInf$st_unmapped_region3)  
-   chrInf$unmapped_region4_length <- (chrInf$end_unmapped_region4) - (chrInf$st_unmapped_region4)  
-   chrInf$total_unmapped_length <- (chrInf$unmapped_centromere_length)+(chrInf$unmapped_region1_length)+(chrInf$unmapped_region2_length)+(chrInf$unmapped_region3_length)+(chrInf$unmapped_region4_length)
-   chrInf$total_length_mapped <-  (chrInf$size)-(chrInf$total_unmapped_length )
-   chrInf$five_percent  <- ((chrInf$total_length_mapped)*5)/100
-   chrInf
-   chrInf$two_point_five_percent <- chrInf$five_percent/2
+chrInf$unmapped_region1_length <- (chrInf$end_unmapped_region1) - (chrInf$st_unmapped_region1)   
+chrInf$unmapped_region2_length <- (chrInf$end_unmapped_region2) - (chrInf$st_unmapped_region2)  
+chrInf$unmapped_region3_length <- (chrInf$end_unmapped_region3) - (chrInf$st_unmapped_region3)  
+chrInf$unmapped_region4_length <- (chrInf$end_unmapped_region4) - (chrInf$st_unmapped_region4)  
+chrInf$total_unmapped_length <- (chrInf$unmapped_centromere_length)+(chrInf$unmapped_region1_length)+(chrInf$unmapped_region2_length)+(chrInf$unmapped_region3_length)+(chrInf$unmapped_region4_length)
+chrInf$total_length_mapped <-  (chrInf$size)-(chrInf$total_unmapped_length )
+chrInf$five_percent  <- ((chrInf$total_length_mapped)*5)/100
+chrInf
+chrInf$two_point_five_percent <- chrInf$five_percent/2
    
-   chrInf$q_arm <-  chrInf$size - chrInf$five_percent
+chrInf$q_arm <-  chrInf$size - chrInf$five_percent
    
 #calculate q_arm 5% seperately for each chr
    #If any of the unmapped region length or their summation is gereater than 2.5 percent of mapped length of chr then put NA for that value 
