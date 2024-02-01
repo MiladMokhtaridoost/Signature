@@ -36,10 +36,10 @@ for (col in names(data)[5:ncol(data)]) {
 
 #______________________remove rows with NA in the last column____________________
 
-na.omit_last <- function(df) {
-  last_col <- ncol(df)
-  na_rows <- is.na(df[, last_col])
-  df[!na_rows, ]
+na.omit_last <- function(data_list) {
+  last_col <- ncol(data_list)
+  na_rows <- is.na(data_list[, last_col])
+  data_list[!na_rows, ]
 }
 
 for (filename in list.files(path = outpath ,pattern = "\\.txt$")) {
