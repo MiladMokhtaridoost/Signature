@@ -7,7 +7,7 @@ Arguments:
 1. Signature qvalue output data (all interactions)
 2. Signature qvalue output data (positive significant interactions)
 3. Merfish genomic scale data (PMID: 25858977)
-
+<br/>
 
 ## Figure 1H: HiCAN comparison
 One script required: 1H_HiCAN_overlap.R
@@ -18,7 +18,7 @@ Arguments:
 3. Signature qvalue output data (positive significant interactions) [GM12878]
 4. Output pathway for the results
 5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
-
+<br/>
 
 ## Figure 1I: SPRITE comparison
 One script required: 1I_Sprite_overlap.R
@@ -28,7 +28,7 @@ Arguments:
 2. Signature qvalue output data (positive significant interactions) [GM12878]
 3. Output pathway for the results
 4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
-
+<br/>
 
 ## Figure 1J: Validation tickplots
 Two scripts required: part 1 (signature_validation_data_processing.R) and part 2 (signature_validation_graphs.R)
@@ -54,7 +54,7 @@ Arguments:
     | F              | IMR90_Dixon           | lu_IMR90_D             | Lung         | Endoderm   | 3        |
     
 8. Output pathway for the results
-
+<br/>
 
 ## Figure 2A: Genome-wide contact matrix
 Five scripts required: pt1_genomewide_matrix_zscoreAll.R, pt2_genomewide_matrix_zscoreSig.R, pt3_genomewide_matrix_zscoreAll_split.R, pt4_genomewide_matrix_zscoreSig_split.R, and pt5_genomewide_matrix_graph.R
@@ -87,7 +87,7 @@ Arguments:
 5. RDS object from pt4 (zscore_df_sig_X.rds)
 6. RDS object from pt4 (zscore_df_sig_Y.rds)
 7. Output pathway for PDF
-
+<br/>
 
 ## Figure 2D: AB compartment analysis
 Three scripts required: 2D_pt1_data_prepration.R, 2D_pt2_compartment_parallel.R, and 2D_pt3_merge_visualization.R
@@ -103,7 +103,7 @@ Arguments:
 ###  2D_pt3_merge_visualization.R   
 Arguments:
 1. Output pathway (argument 2 from 2D_pt1_data_prepration.R)
-
+<br/>
 
 ## Figure 2F: PQ arm interaction analysis
 One script required: 2F_pq_arms_analysis.R
@@ -111,7 +111,7 @@ One script required: 2F_pq_arms_analysis.R
 Arguments:
 1. Cooler data
 2. Output pathway for the results
-
+<br/>
 
 ## Figure 2G: PQ arm interaction distribution
 One script required: 2G_pq_interaction_distrubtion.R
@@ -119,14 +119,14 @@ One script required: 2G_pq_interaction_distrubtion.R
 Arguments:
 1. Signature qvalue output data (positive significant interactions)
 2. Output pathway for PDF
-
+<br/>
 
 ## Figure 2I: Telomeric and centromeric analysis
 One script required: 2I_centromeric_telomeric_interactions.R (note: the pre-processing of data is same for figure 2J)
 ### 2I_centromeric_telomeric_interactions.R
 Arguments:
 1. Signature qvalue output data (positive significant interactions)
-
+<br/>
 
 ## Figure 4A: K-means clustering
 One scripts required: 4A_Kmeans_clustering.R
@@ -141,7 +141,7 @@ Arguments:
     | Astrocyte_Spine         | 1554.89       | 542.854         |
    
 3. Output pathway for results
-
+<br/>
 
 ## Figure 5A/B: PQ alluvials
 2 scripts required: 5AB_pt1_prepare_data_pqarm.R and 5AB_pt2_alluvial_pqarm.R
@@ -156,3 +156,4 @@ Arguments:
 ### 5AB_pt2_alluvial_pqarm.R
 Arguments:
 1. Pathway to Rdata output (argument 5 from 5AB_pt1_prepare_data_pqarm.R)
+<br/>
