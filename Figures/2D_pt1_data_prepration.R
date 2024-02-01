@@ -44,11 +44,11 @@ na.omit_last <- function(data_list) {
 
 for (filename in list.files(path = outpath ,pattern = "\\.txt$")) {
   
-  df <- read.table(filename, header = TRUE, sep = "\t")
+  data_list <- read.table(filename, header = TRUE, sep = "\t")
   
-  df <- na.omit_last(df)
+  data_list <- na.omit_last(data_list)
   
-  write.table(df, file = filename, sep = "\t", quote = FALSE, row.names = FALSE)
+  write.table(data_list, file = filename, sep = "\t", quote = FALSE, row.names = FALSE)
 }
 
 
