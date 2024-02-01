@@ -129,8 +129,8 @@ Arguments:
 
 
 ## Figure 4A: K-means clustering
-One scripts required: 1E_Kmeans_clustering.R
-### 1E_K-means_clustering.R
+One scripts required: 4A_Kmeans_clustering.R
+### 4A_Kmeans_clustering.R
 Arguments: 
 1. Pathway to input (cis and trans interaction frequency)
 2. Pathway to output
