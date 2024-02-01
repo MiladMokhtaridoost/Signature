@@ -132,8 +132,15 @@ Arguments:
 One scripts required: 4A_Kmeans_clustering.R
 ### 4A_Kmeans_clustering.R
 Arguments: 
-1. Pathway to input (cis and trans interaction frequency)
-2. Pathway to output
+1. Tab-separated text file containing columns of i) cell types, ii) summed cooler data in cis, iii) summed cooler data in trans
+
+    | Cell                    | Cis_IntFreq   | Trans_IntFreq   |
+    |-------------------------|---------------|-----------------|
+    | Adrenal_gland_Schmitt   | 1946.46       | 792.381         |
+    | Astrocyte_Cerebellum    | 1867.59       | 765.822         |
+    | Astrocyte_Spine         | 1554.89       | 542.854         |
+   
+3. Output pathway for results
 
 
 ## Figure 5A/B: PQ alluvials
