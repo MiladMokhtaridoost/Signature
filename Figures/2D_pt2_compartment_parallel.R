@@ -1,11 +1,9 @@
 #_____Load required packages_____________________________________________________
-
 library(dplyr)
 library(tidyr)
 library(parallel) 
 
 #_____Read in arguments_________________________________________________________
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
