@@ -107,5 +107,5 @@ cat(sprintf("cell = %s",cell), sep="\n")
   txt_df$final_compartment <- ifelse(txt_df$compartment_A > 0 & txt_df$compartment_B > 0, "AA",
                                     ifelse(txt_df$compartment_A <= 0 & txt_df$compartment_B <= 0, "BB", "AB"))
   
-  write.table(txt_df, file = cell, sep = "\t", quote = FALSE, row.names = FALSE)
+  write.table(txt_df, file = sprintf("%s/%s",outpath, cell), sep = "\t", quote = FALSE, row.names = FALSE)
 
