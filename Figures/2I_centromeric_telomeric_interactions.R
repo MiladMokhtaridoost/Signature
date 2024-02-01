@@ -382,7 +382,7 @@ chrInf$st_unmapped_region3 <- c(148000000,NA,
    chrInf$st_unmapped_region2[9] -  chrInf$end_unmapped_region1[9]
    (chrInf$st_unmapped_region1[9] - 0)+ (chrInf$st_unmapped_region2[9] -  chrInf$end_unmapped_region1[9])
   chrInf$five_percent [9]- ((chrInf$st_unmapped_region1[9] - 0)+ (chrInf$st_unmapped_region2[9] -  chrInf$end_unmapped_region1[9]))
-  # we do not have  chrInf$p_telo[9] because 5% will be after unmapped region 2 and the size of unmapped region2 is greater than 2.5% of mapped length of chromosome 8
+ 
   chrInf$p_telo[9]<- NA
   chrInf$five_percent[9]- (chrInf$st_centromere_unmapped[9]-chrInf$end_unmapped_region3[9])
   chrInf$st_unmapped_region3[9]-(chrInf$five_percent[9]- (chrInf$st_centromere_unmapped[9]-chrInf$end_unmapped_region3[9]))
