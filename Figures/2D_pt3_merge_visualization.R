@@ -1,5 +1,4 @@
 #_____Load required packages_____________________________________________________
-
 library(tidyr)
 library(parallel)
 library(dplyr)
@@ -9,7 +8,6 @@ library(ggplot2)
 library(RColorBrewer)
 
 #_____Read in arguments_________________________________________________________
-
 args = commandArgs(trailingOnly = TRUE)
 
 input_pathway <- args[1]
