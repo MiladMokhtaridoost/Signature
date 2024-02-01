@@ -4,7 +4,6 @@
 
 
 #_____Read in arguments_________________________________________________________
-
 args = commandArgs(trailingOnly = TRUE)
 
 zdat_file <- args[1]
