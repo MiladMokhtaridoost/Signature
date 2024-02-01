@@ -93,16 +93,16 @@ Arguments:
 Three scripts required: 2D_pt1_data_prepration.R, 2D_pt2_compartment_parallel.R, and 2D_pt3_merge_visualization.R
 ### 2D_pt1_data_prepration.R
 Arguments:
-1. Signature zscore output data (significant)
+1. Signature zscore output data (significant interactions)
 2. Output pathway for the results
 ### 2D_pt2_compartment_parallel.R
 Arguments:
-1. Index of cell types ($1 in the shell script)
-2. Output pathway (same pathway as the pt1_data_prepration.R)
-3. Pathway to aggregated compartment table for 62 cell types (Table S13)
+1. Index of cell types ($1 in the shell schedular script)
+2. Output pathway (argument 2 from 2D_pt1_data_prepration.R)
+3. Aggregated compartment table for all cell types (Table S4)
 ###  2D_pt3_merge_visualization.R   
 Arguments:
-1. Pathway to the cell types (txt files)
+1. Input pathway (argument 2 from 2D_pt1_data_prepration.R)
 2. Pathway to the output (merged file)
 
 ## Figure 2F: PQ arm interaction analysis
