@@ -9,7 +9,6 @@ options(scipen = 999)
 
 #______Read in arguments________________________________________________________
 # running with a scheduler #
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
