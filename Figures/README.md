@@ -152,7 +152,7 @@ Arguments:
 3. Text file containing all female (XX) dataset names on a new line
 4. Text file containing all male (XY) dataset names on a new line
 5. Output pathway for RData
-6. P/Q arm annotation of something (Table S?)
+6. P/Q arm annotations of Signature data
 ### 5AB_pt2_alluvial_pqarm.R
 Arguments:
-1. Pathway to Rdata output from prepare_data_pqarm.R
+1. Pathway to Rdata output (argument 5 from 5AB_pt1_prepare_data_pqarm.R)
