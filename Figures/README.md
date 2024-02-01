@@ -90,16 +90,16 @@ Arguments:
 
 
 ## Figure 2F: PQ analysis
-One script required: pt1_cooler_data_column_sum.R, and pt2_pq_arms_analysis.R
-### 2F_p_q_arms_analysis.R
+One script required: 2F_pq_arms_analysis.R
+### 2F_pq_arms_analysis.R
 Arguments:
 1. Cooler data (output)
 2. Output pathway to the results (txt file including interaction types, binomial test results, and figure)
 
 
 ## Figure 2G: PQ distribution
-One script required
-### PQ_Interaction_Distrubtion.R
+One script required: 2G_pq_interaction_distrubtion.R
+### 2G_pq_interaction_distrubtion.R
 Arguments:
 1. Signature qvalue output data (positive significant interactions)
 2. Output pathway for PDF
