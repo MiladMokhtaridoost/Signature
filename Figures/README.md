@@ -133,7 +133,7 @@ One scripts required: 1E_Kmeans_clustering.R
 ### 1E_K-means_clustering.R
 Arguments: 
 1. Pathway to input (cis and trans interaction frequency)
-2. Pathway tO output
+2. Pathway to output
 
 
 ## Figure 5A/B: PQ alluvials
