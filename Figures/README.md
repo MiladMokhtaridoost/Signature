@@ -10,7 +10,7 @@ Arguments:
 4. Pathway to output
 5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
 
-## Figure 1I: SPRTIE comparison
+## Figure 1I: SPRITE comparison
 One script required: 1I_Sprite_overlap.R
 ### 1I_Sprite_overlap.R
 Arguments: 
