@@ -144,15 +144,15 @@ Arguments:
 
 
 ## Figure 5A/B: PQ alluvials
-2 scripts required: prepare_data_pqarm.R and signature_alluvial_pqarm.R
-### prepare_data_pqarm.R
+2 scripts required: 5AB_pt1_prepare_data_pqarm.R and 5AB_pt2_alluvial_pqarm.R
+### 5AB_pt1_prepare_data_pqarm.R
 Arguments:
 1. Signature qvalue output data (positive significant interactions)
 2. Signature qvalue output data (ALL interactions)
 3. Text file containing all female (XX) dataset names on a new line
 4. Text file containing all male (XY) dataset names on a new line
 5. Output pathway for RData
-6. Supplemental table S4-S8 (i.e. P/Q arm annotation)
-### signature_alluvial_pqarm.R
+6. P/Q arm annotation of something (Table S?)
+### 5AB_pt2_alluvial_pqarm.R
 Arguments:
 1. Pathway to Rdata output from prepare_data_pqarm.R
