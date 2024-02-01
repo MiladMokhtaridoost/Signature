@@ -95,7 +95,7 @@ Three scripts required: 2D_pt1_data_prepration.R, 2D_pt2_compartment_parallel.R,
 Arguments:
 1. Signature zscore output data (significant)
 2. Output pathway for the results
-### 2d_pt2_compartment_parallel.R
+### 2D_pt2_compartment_parallel.R
 Arguments:
 1. Index of cell types ($1 in the shell script)
 2. Output pathway (same pathway as the pt1_data_prepration.R)
