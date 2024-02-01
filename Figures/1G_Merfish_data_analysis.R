@@ -2,11 +2,9 @@
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
-## check with katty if I changed this correctly ##
 qvalue_all <- read.table(args[1], header = T, sep = "\t")
 qvalue_pos <- read.table(args[2], header = T, sep = "\t")
-genomic_scale <- read.table(args[3], ...?)
-#########-------------------------------##########
+genomic_scale <- read.table(args[3], header = T, sep = "\t")
 
 #_____Load required packages_____________________________________________________
 library(tidyr)
