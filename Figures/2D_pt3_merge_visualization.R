@@ -10,8 +10,7 @@ library(RColorBrewer)
 #_____Read in arguments_________________________________________________________
 args = commandArgs(trailingOnly = TRUE)
 
-input_pathway <- args[1]
-save_output_path <- args[2]
+files_pathway <- args[1]
 
 #__________________________Set the theme__________________________________________________
 theme_set(theme_bw() + theme(strip.background =element_rect(fill="#e7e5e2")) +
@@ -106,7 +105,7 @@ for (i in seq_along(cells))
   
   file_name <- cells[i] 
   
-  full_path <- file.path(input_pathway, file_name) 
+  full_path <- file.path(files_pathway, file_name) 
   
   temp_all_compartments <- read.table(full_path, header = FALSE) 
   
@@ -123,7 +122,7 @@ for (i in seq_along(cells))
 print(merged_compartment) 
  
 
-write.table(merged_compartment, sprintf("%s/merged_compartment.txt", save_output_path), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(merged_compartment, sprintf("%s/merged_compartment.txt", files_pathway), sep = "\t", quote = FALSE, row.names = FALSE)
 
 
 
@@ -229,7 +228,7 @@ count_AB
      scale_fill_manual(values = colors) +   ggtitle("Boxplot of Z-Scores by Compartment") +  
      theme(legend.position = "bottom")
    
-   filename <- "compartment_comparison_zscore_box_plot.pdf" 
+   filename <- sprintf("%s/compartment_comparison_zscore_box_plot.pdf", files_pathway)
    pdf(filename, width = 12, height = 16)
    print(plot)
    dev.off() 
