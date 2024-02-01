@@ -8,7 +8,7 @@ options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
 outpath <- args[2]
-compartment_pathway <- args[3]
+compartment_data <- args[3]
 
 #_____Input list_________________________________________________________
 cells <- c("Adrenal_gland_Schmitt.txt","Aorta_Leung.txt",
@@ -80,7 +80,7 @@ cat(sprintf("cell = %s",cell), sep="\n")
 
 
   txt_df <- read.table(sprintf("%s/%s",outpath, cell), header = TRUE)
-  compartment <- read.csv(sprintf("%s", compartment_pathway), header=T)
+  compartment <- read.csv(compartment_data), header=T)
 
   compartment_col_name <- gsub(".txt", "", cell)
   
