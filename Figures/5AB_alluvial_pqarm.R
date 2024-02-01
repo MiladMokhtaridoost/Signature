@@ -8,7 +8,6 @@ library(dplyr)
 
 #______Read in arguments________________________________________________________
 # running with a scheduler #
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 
