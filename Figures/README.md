@@ -4,7 +4,7 @@
 One script required: 1H_HiCAN_overlap.R
 ### 1H_HiCAN_overlap.R
 Arguments: 
-1. HiCAN's top 100 nucleolus loci (Figure 2B https://doi.org/10.1093/nar/gkad211)
+1. HiCAN's top 100 nucleolar loci (Figure 2B https://doi.org/10.1093/nar/gkad211)
 2. HiCAN's top 100 speckle loci (Figure 2B https://doi.org/10.1093/nar/gkad211)
 3. Signature qvalue output data (positive significant interactions) [GM12878]
 4. Pathway to output
