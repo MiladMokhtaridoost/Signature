@@ -102,8 +102,8 @@ Arguments:
 3. Aggregated compartment table for all cell types (Table S4)
 ###  2D_pt3_merge_visualization.R   
 Arguments:
-1. Input pathway (argument 2 from 2D_pt1_data_prepration.R)
-2. Pathway to the output (merged file)
+1. Output pathway (argument 2 from 2D_pt1_data_prepration.R)
+
 
 ## Figure 2F: PQ arm interaction analysis
 One script required: 2F_pq_arms_analysis.R
