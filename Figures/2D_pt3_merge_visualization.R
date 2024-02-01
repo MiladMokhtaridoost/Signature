@@ -12,6 +12,7 @@ args = commandArgs(trailingOnly = TRUE)
 
 input_pathway <- args[1]
 save_output_path <- args[2]
+
 #__________________________Set the theme__________________________________________________
 theme_set(theme_bw() + theme(strip.background =element_rect(fill="#e7e5e2")) +
             theme(plot.title = element_text(hjust = 0.6, size = 14),
