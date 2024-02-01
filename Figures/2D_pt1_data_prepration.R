@@ -10,7 +10,7 @@ data_path <- args[1]
 outpath <- args[2]
 
 #____split column ID____________________________________________________________
-data <- read.table(sprintf("%s/signature_trans1vsAll_1MB_merged_zscores.txt"), header= T)
+data <- read.table(data_path), header= T)
 colnm <- c("chrA", "st1", "end1","chrB","st2","end2")
 data$ID <- sub("B", "\\.B", as.character(data$ID))
 data <- data %>% separate(ID, sep = "\\.", into = colnm, remove = FALSE)
