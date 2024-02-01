@@ -1,11 +1,9 @@
 #_____Load required packages_____________________________________________________
-
 library(tidyr)
 library(dplyr)
 library(data.table)
 
 #_____Read in arguments_________________________________________________________
-
 args = commandArgs(trailingOnly = TRUE)
 
 data_path <- args[1]
