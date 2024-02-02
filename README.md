@@ -2,10 +2,8 @@
 
 Welcome to the Signature repository! Signature is an innovative machine learning method to comprehensively detect chromosomal interactions, focusing specifically on non-homologous chromosomal contacts (NHCCs). Feel free to explore each folder for a comprehensive understanding of the Signature method. If you have questions, encounter issues, or wish to contribute, please don't hesitate to reach out through the repository's communication channels and Maass lab contact information (https://lab.research.sickkids.ca/maass/). Thank you for your interest in Signature!
 
-
-
-
 The repository is structured as follows:
+<br/>
 
 ## 1. Pipeline Folder
 The Signature pipeline folder encompasses four key subfolders:
@@ -21,6 +19,7 @@ The Community Detection folder houses scripts related to the unsupervised learni
 
 ### d. Demo
 This folder contains Signature's input data (cooler interaction frequencies) for two Hi-C datasets. These files can be used as toy data for running a demo of Signature.
+<br/>
 
 ## 2. Figures Folder
 The Figures folder is dedicated to scripts associated with the figures presented in the "Inter-chromosomal contacts demarcate genome topology along a spatial gradient" paper. These scripts involve a certain level of data pre-processing to generate the figures showcased in our research paper. Refer to this folder for insights into the data processing steps and to reproduce the figures.
