@@ -1,4 +1,4 @@
-# Overview
+# Pre-processing Hi-C/Omni-C data
 
 In order to run Signature's LWLR, the input data needs to be in a human-readable, Signature-friendly format.
 
