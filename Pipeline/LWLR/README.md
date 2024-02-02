@@ -4,8 +4,8 @@ Signature is a bioinformatics pipeline for determining significant genomic inter
 # Requirments
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system's guidelines)
 
-   - For trans analysis of 3 cells: ~16Gb memory, ~12hr runtime
-   - For cis analysis of 3 cells: ~100Gb, ~3 days runtime
+   - For trans analysis of 3 datasets: ~16Gb memory, ~12hr runtime
+   - For cis analysis of 3 datasets: ~100Gb, ~3 days runtime
 
 ### Modules
 
