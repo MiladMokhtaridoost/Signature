@@ -1,19 +1,21 @@
-# Inter-chromosomal contacts demarcate genome topology along a spatial gradient
-Signature is a bioinformatics pipeline for determining significant genomic interactions in Hi-C/Omni-C datasets. Signature is able to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements, the datasets you want to process, the genomic resolution, and the type of analysis. This version of Signature is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in the _user-friendly scheduler_ to match your High Performance Computing system's guidelines. 
+# Signature: A bioinformatics pipeline for determining significant genomic interactions
+Signature analyzes Hi-C/Omni-C data to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements to run, the pre-processed datasets you want to analyze, the genomic resolution, and the type of analysis. This version of Signature is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in all shell scripts to match your High Performance Computing system's guidelines.  
+
+This folder contains:
+- batch_create_signature_files.sh (a user-friendly shell script required for running Signature)
+- batch_create_signature_files_DemoExample.sh (filled out example using the toy data from _Signature/Pipeline/Demo_)
+- scripts_Signature (folder containing any dependency scripts and data)
 
 ## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
-
    - For NHCC (trans) analysis of 3 datasets: ~16Gb memory, ~12hr runtime
    - For intra-chromosomal interaction (cis) analysis of 3 datasets: ~100Gb memory, ~3 days runtime
-
 ### Modules
-
    - bedtools/2.24.0
    - R/4.2.1
    - python/2.7.9
+<br/>
 
-<br\>
 ## Folder contents
 ### User-friendly scheduler
 batch_create_signature_files.sh
