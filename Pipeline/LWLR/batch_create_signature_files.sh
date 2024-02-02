@@ -16,13 +16,13 @@ cell3=		# cell_type  ex. [Aorta_Leung]
 #------------------------------------------------#
 
 #---------------EDIT ANALYSIS INFO---------------#
-path=			# /pathway/to/folder/this/script/is/in (/.../Signature-main/Pipeline/LWLR)
-coolerpath=		# /pathway/to/cooler/output
+path=            # /pathway/to/folder/this/script/is/in (/.../Signature-main/Pipeline/LWLR)
+coolerpath=      # /pathway/to/cooler/output
 
-analysis=      	# either [cis] or [trans]
-trans=	      	# if trans selected above: either [1vsAll] or [pairwise] (leave blank if cis was selected above)
-resolution=	    # resolution: [1000000], [50000], etc.
-res=        	# resolution in human readable format; [1MB], [50KB], etc.
+analysis=        # either [cis] or [trans]
+trans=           # if trans selected above: either [1vsAll] or [pairwise] (leave blank if cis was selected above)
+resolution=	     # resolution: [1000000], [50000], etc.
+res=             # resolution in human readable format; [1MB], [50KB], etc.
 #------------------------------------------------#
 
 
