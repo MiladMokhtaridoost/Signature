@@ -349,4 +349,4 @@ df_per  <- data.frame(distance = c(pos_data,neg_data),
 pos <- subset(df_per, type == "pos")
 neg <- subset(df_per, type == "neg")
 
-wilcox.test(pos$distance,neg$distance, paired = TRUE,exact = FALSE,correct = TRUE)
+wilcox.test(pos$distance,neg$distance, paired = TRUE)
