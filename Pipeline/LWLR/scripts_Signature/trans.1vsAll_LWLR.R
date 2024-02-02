@@ -1,8 +1,3 @@
-######### Signature pipeline trans one_vs_all algorithm ##########
-##################################################################
-# Developer: Milad Mokhtaridoost, milad.mokhtaridoost@sickkids.ca
-##################################################################
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 DATA_PATH <- args[1]
