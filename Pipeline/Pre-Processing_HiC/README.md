@@ -1,6 +1,6 @@
 # Overview
 
-In order to run Signature's LWLR, the input data needs to be in a human-readable, signature-friendly format. Outlined here are the 4 main steps invovled in pre-processing the raw Hi-C data for use in Signature's LWLR. 
+In order to run Signature's LWLR, the input data needs to be in a human-readable, signature-friendly format. Outlined here are the 4 main steps involved in pre-processing the raw Hi-C data for use in Signature's LWLR. 
 
 # 1. BWA
 
@@ -12,7 +12,7 @@ Pairtools requires mapped Hi-C reads in .bam file format. We filtered for valid 
 
 # 3. cooler
 
-We converted the matched and filtered interaction pairs produced from pairtools into a readable and normalized contact matrix by using Cooler (version 0.8.11; cload pairix, balance, dump)[3]. After running cooler, _coolerdumpToSignature.py_ is required to convert from cooler format to a signature-friendly format. __This script is included in this folder.__ We ensured (FIX THIS SENTENCE JORDAN) pseudo-chromosome Y reads were removed from all female cooler data (see _gonosomes_ section below).
+We converted the matched and filtered interaction pairs produced from pairtools into a readable and normalized contact matrix by using Cooler (version 0.8.11; cload pairix, balance, dump)[3]. After running cooler, _coolerdumpToSignature.py_ is required to convert from cooler format to a signature-friendly format. __This script is included in this folder.__ We ensured that pseudo-chromosome Y information was removed from all female cooler data (see _gonosomes_ section below).
 
 ### coolerdumpToSignature.py
 Arguments:
