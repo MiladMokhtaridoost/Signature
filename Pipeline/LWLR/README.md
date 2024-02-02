@@ -1,10 +1,6 @@
 # Signature: A bioinformatics pipeline for determining significant genomic interactions
 Signature analyzes Hi-C/Omni-C data to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements to run, the pre-processed datasets you want to analyze, the genomic resolution, and the type of analysis. This version of Signature is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in all shell scripts to match your High Performance Computing system's guidelines.  
-
-This folder contains:
-- batch_create_signature_files.sh (a user-friendly shell script required for running Signature)
-- batch_create_signature_files_DemoExample.sh (filled out example for the toy data from _Signature/Pipeline/Demo_)
-- scripts_Signature (folder containing any dependency scripts and data)
+<br/>
 
 ## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
@@ -17,31 +13,23 @@ This folder contains:
 <br/>
 
 ## Folder contents
-### User-friendly scheduler
-batch_create_signature_files.sh
+### batch_create_signature_files.sh
+   - user-friendly shell script required for running Signature
+   - all-in-one script that will generate a configuration file and Slurm schedular to run Signature
+   - minimal edits are required (4 lines for _cell info_, 6 lines for _analysis info_)
+### batch_create_signature_files_DemoExample.sh
+   - filled out example for the toy data from _Signature/Pipeline/Demo_
+   - note: this script works for 1-3 cells without modification, for 4+ cells see _Making user-specific modifications_ section below)
+### scripts_Signature
+   - folder containing all scripts required to run Signature
+      1. main shell script with the supervised machine learning (_run_Signature.sh_)
+      2. dependency scripts for machine learning (_7 R, 1 Awk, 1 shell_)
 
-### Main Script
-Signature.v29.sh
-
-# Main script dependencies 
-trans.1vsAll_LWLR.R
-
-trans.pairwise_LWLR.R
-
-cis_LWLR.R
-
-LWLR_train_cis.R
-
-LWLR_train.R
-
-lowest_zscore_1vsAll.R
-
-lowest_zscore_pairwise.R
-
-merger.awk
+<br/><br/>(Keep editting here...)<br/><br/><br/>
 
 
-# Running interaction analysis with Signature
+
+## Running interaction analysis with Signature
 Signature runs with one simple shell script - the _user-friendly scheduler_ - which has been generated to submit your job in batches of 3 datasets (cell types). Larger batches can be submitted depnding on your HPC's processing power and memory limits (see _Making user-specific modifications_ section). 
 
 To get started:
