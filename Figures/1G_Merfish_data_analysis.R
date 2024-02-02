@@ -299,8 +299,9 @@ neg_350
 neg_400 <- length(neg[neg>350 & neg<=400])
 neg_400 
 
-#_________________________________________number of interactions in each region (not cumulative)________________________________________________
-
+#########################################################
+#number of interactions in each region (not cumulative)
+#########################################################
 pos_data <- c(pos_50,pos_100,pos_150,pos_200,pos_250,pos_300,pos_350,pos_400)
 neg_data <- c(neg_50,neg_100,neg_150,neg_200,neg_250,neg_300,neg_350,neg_400) 
 df  <- data.frame(distance = c(pos_data,neg_data),
