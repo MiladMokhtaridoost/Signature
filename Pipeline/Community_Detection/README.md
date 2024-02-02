@@ -1,10 +1,10 @@
 # Estimating spatial genome topology with Community Detection
 
-In our research, we harnessed the power of Community Detection (CD) to unveil spatial genome topology. CD allowed us to generate clusters from a comprehensive set of cis and trans interactions, which in turn facilitated the visualization of the CD-derived results.
+In our research, we harnessed the power of Community Detection (CD) to unveil spatial genome topology. CD allowed us to generate clusters of cis and trans interaction frequencies, which in turn facilitated the visualization of the CD-derived results in genome topology maps.
 
 #### Input Data
 
-To accomplish this, we utilized the average interaction frequency (from cooler) from our compendium consisting of 62 individual datasets (as detailed in the paper) for each interaction.
+To accomplish this, we utilized the average interaction frequency (from cooler) from our compendium of 62 individual datasets (as detailed in the paper) for each interaction.
 
 #### Utilizing Combo Algorithm
 
@@ -26,11 +26,11 @@ Arguments:
 In this step, we are computing the average interaction for each interaction across all datasets.
 
 Arguments: 
-1. Pathway to the netwok dataset (output of the previous script)
+1. Pathway to the network dataset (output of the previous script)
 2. Pathway for output data
 
 ### CD_pycombo.py
-CD Application: Following data preparation, we executed the CD analysis using pycombo, allowing us to extract valuable insights from our datasets. We set the pycombo parameters as "modularity_resolution=1.4" and "max_communities=46" so the final result clusters nodes in 46 communities to resembles diploid genomes. 
+CD Application: Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes. 
 
 Arguments: 
 1. pathway to the average network data (output of the previous step)
@@ -40,7 +40,7 @@ Arguments:
 The results obtained through CD analysis can be effectively visualized using the following tools:
 
 ### Gephi (https://gephi.org/)
-Gephi provides a versatile platform for visualizing and analyzing complex networks, making it an ideal choice for exploring the outcomes of CD.
+Gephi provides a versatile platform for visualizing and analyzing complex networks, making it an ideal choice for exploring the outcomes of CD in 'genome topology maps'.
 
 ### Helios web (https://github.com/filipinascimento/helios-web/)
-Helios Web offers an efficient web-based solution for visualizing and interpreting the results of CD in a 3D format, enhancing accessibility and usability.
+Helios Web offers a web-based solution for visualizing and interpreting the results of CD in 3D.
