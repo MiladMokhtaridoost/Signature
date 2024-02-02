@@ -7,8 +7,8 @@ Welcome to the Signature repository! Signature is an innovative machine learning
 
 The repository is structured as follows:
 
-## 1. Signature Folder
-The Signature folder encompasses three key subfolders:
+## 1. Pipeline Folder
+The Signature pipeline folder encompasses four key subfolders:
 
 ### a. Pre-processing
 The Pre-processing folder includes scripts essential for preparing raw Hi-C data for our algorithms. This step is crucial in transforming data into a format suitable for further analysis.
