@@ -3,7 +3,7 @@ Signature analyzes Hi-C/Omni-C data to estimate significant interactions for bot
 
 This folder contains:
 - batch_create_signature_files.sh (a user-friendly shell script required for running Signature)
-- batch_create_signature_files_DemoExample.sh (filled out example using the toy data from _Signature/Pipeline/Demo_)
+- batch_create_signature_files_DemoExample.sh (filled out example for the toy data from _Signature/Pipeline/Demo_)
 - scripts_Signature (folder containing any dependency scripts and data)
 
 ## Requirements
