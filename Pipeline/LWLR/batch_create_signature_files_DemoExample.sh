@@ -8,21 +8,21 @@
 
 
 #----------------EDIT CELL INFO------------------#
-batch=1		# number  ex.  [4]
+batch=1
 
-cell1=CHLA9_Maass		# cell_type  ex. [Astrocyte_spine]
-cell2=COGE352_Maass		# cell_type  ex. [Astrocyte_cerebellum]
-cell3=TC32_Maass		# cell_type  ex. [Aorta_Leung]
+cell1=H9hESC_day00_Zhang
+cell2=Astrocyte_Spine
+cell3=
 #------------------------------------------------#
 
 #---------------EDIT ANALYSIS INFO---------------#
-path=/hpf/largeprojects/pmaass/Test_run/Signature-main/Pipeline/LWLR		    # /pathway/to/folder/this/script/is/in (/.../Signature-main/Pipeline/LWLR)
-coolerpath=/hpf/largeprojects/pmaass/3D-flow/normalized_data_4DNuc_pipeline/human    # /pathway/to/cooler/output
+path=/your/hpc/directory/Signature-main/Pipeline/LWLR
+coolerpath=/your/hpc/directory/Signature-main/Pipeline/Demo
 
-analysis=trans      	# either [cis] or [trans]
-trans=1vsAll	      	# if trans selected above: either [1vsAll] or [pairwise] (leave blank if cis was selected above)
-resolution=1000000	    # resolution: [1000000], [50000], etc.
-res=1MB	        	# resolution in human readable format; [1MB], [50KB], etc.
+analysis=trans
+trans=1vsAll
+resolution=1000000
+res=1MB
 #------------------------------------------------#
 
 
@@ -31,7 +31,7 @@ res=1MB	        	# resolution in human readable format; [1MB], [50KB], etc.
 
 
 #-----------------DONT EDIT----------------------#
-scr=$path/scripts_Signature.v29
+scr=$path/scripts_Signature
 path=$path/results
 mkdir $path
 
@@ -52,6 +52,7 @@ echo "Pathway to configuration and scheduler = $path/schedulers/$cell1.$cell2.$c
 true > $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 
 echo type.class=$analysis$trans >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
+echo specie=human >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo cell=$path/batch$batch\_cells.txt >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo res=1000000 >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo name=$cell1.$cell2.$cell3.$analysis$trans.$res >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
@@ -83,7 +84,7 @@ echo "" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.
 echo "toSign=$scr" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 echo "configuration=$path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 echo "" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
-echo '$toSign/Signature.v29.sh $(cat $configuration)' >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
+echo '$toSign/run_Signature.sh $(cat $configuration)' >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 
 echo "SCHEDULER FILE DONE"
 
