@@ -1,9 +1,3 @@
-# choose lowest absolute value of z-score
-##########################################################################
-# Developer: Daniella F. Lato, Daniella.Lato@gmail.com
-##########################################################################
-
-
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
 tmp <- args[1]
