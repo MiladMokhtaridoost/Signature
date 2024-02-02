@@ -1,7 +1,7 @@
 # Inter-chromosomal contacts demarcate genome topology along a spatial gradient
-Signature is a bioinformatics pipeline for determining significant genomic interactions in Hi-C/Omni-C datasets. Signature is able to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements, the datasets you want to process, the genomic resolution, and the type of analysis. Signature v29 is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in the _user-friendly scheduler_ to match your High Performance Computing system's guidelines. 
+Signature is a bioinformatics pipeline for determining significant genomic interactions in Hi-C/Omni-C datasets. Signature is able to estimate significant interactions for both intra- and inter-chromosomal interactions genome-wide or for a given region of interest. There are three main requirements, the datasets you want to process, the genomic resolution, and the type of analysis. This version of Signature is not prepared to complete trans analyses at resolutions higher than 500KB, or cis analyses at resolutions higher than 50KB. This pipeline is made to run on the Slurm Linux system - the job-submission scripting will need to be modified in the _user-friendly scheduler_ to match your High Performance Computing system's guidelines. 
 
-# Requirements
+## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
 
    - For NHCC (trans) analysis of 3 datasets: ~16Gb memory, ~12hr runtime
@@ -13,10 +13,12 @@ Signature is a bioinformatics pipeline for determining significant genomic inter
    - R/4.2.1
    - python/2.7.9
 
-# User-friendly scheduler
+<br\>
+## Folder contents
+### User-friendly scheduler
 batch_create_signature_files.sh
 
-# Main Script
+### Main Script
 Signature.v29.sh
 
 # Main script dependencies 
@@ -35,7 +37,6 @@ lowest_zscore_1vsAll.R
 lowest_zscore_pairwise.R
 
 merger.awk
-
 
 
 # Running interaction analysis with Signature
