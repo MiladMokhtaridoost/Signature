@@ -19,7 +19,7 @@ The LWLR folder contains the Local Weighted Linear Regression (LWLR) approach, a
 ### c. Community Detection (Unsupervised Learning)
 The Community Detection folder houses scripts related to the unsupervised learning approach in Signature, specifically the Community Detection method. This method aims to uncover patterns of chromosomal interactions without prior labeling. Explore this folder for insights into the Community Detection approach and guidance on implementation.
 
-### d. Demo data
+### d. Demo
 This folder contains Signature's input data (cooler interaction frequencies) for two Hi-C datasets. These files can be used as toy data for running a demo of Signature.
 
 ## 2. Figures Folder
