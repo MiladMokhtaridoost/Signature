@@ -7,7 +7,7 @@ Welcome to the Signature repository! Signature is an innovative machine learning
 
 The repository is structured as follows:
 
-## Signature Folder
+## 1. Signature Folder
 The Signature folder encompasses three key subfolders:
 
 ### a. Pre-processing
@@ -19,5 +19,5 @@ The LWLR folder contains the Local Weighted Linear Regression (LWLR) approach, a
 ### c. Community Detection (Unsupervised Learning)
 The Community Detection folder houses scripts related to the unsupervised learning approach in Signature, specifically the Community Detection method. This method aims to uncover patterns of chromosomal interactions without prior labeling. Explore this folder for insights into the Community Detection approach and guidance on implementation.
 
-## Figures Folder
+## 2. Figures Folder
 The Figures folder is dedicated to scripts associated with the figures presented in the "Inter-chromosomal contacts demarcate genome topology along a spatial gradient" paper. These scripts involve a certain level of data pre-processing to generate the figures showcased in our research paper. Refer to this folder for insights into the data processing steps and to reproduce the figures.
