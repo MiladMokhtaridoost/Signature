@@ -31,7 +31,7 @@ res=        	# resolution in human readable format; [1MB], [50KB], etc.
 
 
 #-----------------DONT EDIT----------------------#
-scr=$path/scripts_Signature.v29
+scr=$path/scripts_Signature
 path=$path/results
 mkdir $path
 
@@ -84,7 +84,7 @@ echo "" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.
 echo "toSign=$scr" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 echo "configuration=$path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 echo "" >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
-echo '$toSign/Signature.v29.sh $(cat $configuration)' >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
+echo '$toSign/run_Signature.sh $(cat $configuration)' >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.scheduler.sh
 
 echo "SCHEDULER FILE DONE"
 
