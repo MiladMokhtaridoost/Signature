@@ -49,7 +49,7 @@ Arguments:
 
 
 
-# Sources
+# References
 
 [1] Li, H. & Durbin, R. Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics 25, 1754-1760 (2009). https://doi.org:10.1093/bioinformatics/btp324
 
