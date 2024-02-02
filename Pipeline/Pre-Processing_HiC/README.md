@@ -1,6 +1,6 @@
 # Overview
 
-In order to run Signature's LWLR, the input data needs to be in a human-readable, signature-friendly format. Outlined here are the 4 main steps involved in pre-processing the raw Hi-C data for use in Signature's LWLR. 
+In order to run Signature's LWLR, the input data needs to be in a human-readable, Signature-friendly format. Outlined here are the 4 main steps involved in pre-processing the raw Hi-C data for use in Signature's LWLR. 
 
 # 1. BWA
 
