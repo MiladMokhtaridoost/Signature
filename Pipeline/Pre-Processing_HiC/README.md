@@ -12,7 +12,7 @@ Pairtools requires mapped Hi-C reads in .bam file format. We filtered for valid 
 
 # 3. cooler
 
-We converted the matched and filtered interaction pairs produced from pairtools into a readable and normalized contact matrix by using Cooler (version 0.8.11; cload pairix, balance, dump)[3]. After running cooler, _coolerdumpToSignature.py_ is required to convert from cooler format to a signature-friendly format. __This script is included in this folder.__ We ensured that pseudo-chromosome Y information was removed from all female cooler data (see _gonosomes_ section below).
+We converted the matched and filtered interaction pairs produced from pairtools into a readable and normalized contact matrix by using Cooler (version 0.8.11; cload pairix, balance, dump)[3]. After running Cooler, our _coolerdumpToSignature.py_ script is required to convert from Cooler format to a Signature-friendly format. __This script is included in this folder.__ We ensured that pseudo-chromosome Y information was removed from all female cooler data (see _gonosomes_ section below).
 
 ### coolerdumpToSignature.py
 Arguments:
