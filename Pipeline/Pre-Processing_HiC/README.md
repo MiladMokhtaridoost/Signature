@@ -10,15 +10,18 @@ This folder contains:
   
 Outlined below are the 4 main steps involved in pre-processing the raw Hi-C data for use in Signature's LWLR. 
 
-Note: an example of the final pre-processed data (Cooler) can be found in _Signature/Pipeline/Demo_
+Note: an example of the final pre-processed data (Cooler) can be found in _Signature/Pipeline/Demo_  
+<br/>
 
 ## 1. BWA
 
-We mapped raw Hi-C paired-reads to the GRCh38 version 32 of the human reference genome using bwa (version 0.7.17; mem)[1]. We determined mapping statistics using samtools (version 1.5; view, flagstat)[2]. 
+We mapped raw Hi-C paired-reads to the GRCh38 version 32 of the human reference genome using bwa (version 0.7.17; mem)[1]. We determined mapping statistics using samtools (version 1.5; view, flagstat)[2].  
+<br/>
 
 ## 2. pairtools
 
-Pairtools requires mapped Hi-C reads in .bam file format. We filtered for valid Hi-C and Omni-C alignments by using pairtools (version 0.3.0; parse, sort, dedup, select ‘(pair_type == "UU") or (pair_type == "UR") or (pair_type == "RU")’ , split, select 'True') (https://github.com/open2c/pairtools). Indexing of the resulting pairs was done with the pairix program which was developed for the 4D Nucleome consortium and indexes .pairs files (version 0.3.7) (https://github.com/4dn-dcic/pairix).
+Pairtools requires mapped Hi-C reads in .bam file format. We filtered for valid Hi-C and Omni-C alignments by using pairtools (version 0.3.0; parse, sort, dedup, select ‘(pair_type == "UU") or (pair_type == "UR") or (pair_type == "RU")’ , split, select 'True') (https://github.com/open2c/pairtools). Indexing of the resulting pairs was done with the pairix program which was developed for the 4D Nucleome consortium and indexes .pairs files (version 0.3.7) (https://github.com/4dn-dcic/pairix).  
+<br/>
 
 ## 3. Cooler
 
@@ -29,8 +32,9 @@ Arguments:
 1. Pathway and file name to cooler dumped tab separated file
 2. Output pathway
 3. Resolution
+<br/>
 
-# 4. gonosomes
+## 4. gonosomes
 
 We utilized logistic regression on the SAM files of datasets with known sex to train a classifier. This classifier was trained on the proportion of gonosome-mapped reads to autosome-mapped reads. We then applied the trained classifier to predict the sex of datasets without sex labels. First, _gonosome_PMR.sh_ is used to generate the proportional mapped reads (PMR) file for each unknown dataset. Then, _gonosome_prediction_LogisticRegression.sh_ is used to format the PMR data and run it through the logistic regression model.
 
@@ -53,11 +57,7 @@ Required modules:
 Arguments:
 1. Pathway to the extracted directory Pre-Processing folder (/.../Signature-main/Pipeline/Pre-Processing_HiC)
 2. Pathway and file name of a single column text file containing a list of your samples/datasets with unknown gonosomal sex (these datasets shoud have their corresponding PMR files already produced in output folder from the above script)
-
-
-
-
-
+<br/>
 
 # References
 
