@@ -6,6 +6,7 @@ This folder contains:
 - coolerdumpToSignature.py (python script required for data re-formatting)
 - gonosome_PMR.sh (shell script to produce proportional mapped reads of gonosomes and autosomes)
 - gonosome_prediction_LogisticRegression.sh (shell script required to predict the biological sex of datasets from PMRs)
+- scripts (folder containing required scripts to run )
   
 Outlined below are the 4 main steps involved in pre-processing the raw Hi-C data for use in Signature's LWLR. 
 
