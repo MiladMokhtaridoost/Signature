@@ -17,15 +17,18 @@ Signature's LWLR can process both cis and trans data. The same script can be use
    -  the data will be processed in **"trans"** for a **"1vsAll"** approach at a resolution of **"1000000"** (i.e. **"1MB"**)
 
 Note: the above information from step 5 can be seen filled-in in an exmaple script (/.../Signature-main/Pipeline/LWLR/batch_create_signature_files_DemoExample.sh)  
+<br/>
 
-After Signature is done running the demo data, the results can be found in **"*/your/extracted/location*/Signature-main/Pipeline/LWLR/results/output"** and will look something like this:  
+After Signature is done running the demo data, the results can be found in "*/your/extracted/location*/Signature-main/Pipeline/LWLR/results/output" and will look something like this:
+
+**Example Astrocyte_Spine.H9hESC_day00_Zhang..trans1vsAll.1MB.zscoresall.txt**
 
    | ID                                                | Astrocyte_Spine       | H9hESC_day00_Zhang     |
    |:--------------------------------------------------|:----------------------|:-----------------------|
    | Achr1.10000000.11000000Bchr10.0.1000000           | 1.420                 | 1.048                  |
    | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
    | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
-
+<br/>
    
 ## Community Detection
 MILAD FILL SOMETHING IN HERE. The Demo directory contains toy data at the 1MB resolution (input for Community Detection). These files are named "[cell].pairs.res1000000.cool.txt".
