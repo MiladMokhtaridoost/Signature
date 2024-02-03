@@ -51,7 +51,6 @@ echo "Pathway to configuration and scheduler = $path/schedulers/$cell1.$cell2.$c
 true > $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 
 echo type.class=$analysis$trans >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
-echo specie=human >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo cell=$path/batch$batch\_cells.txt >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo res=1000000 >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
 echo name=$cell1.$cell2.$cell3.$analysis$trans.$res >> $path/schedulers/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.signature.$analysis$trans.configuration.txt
