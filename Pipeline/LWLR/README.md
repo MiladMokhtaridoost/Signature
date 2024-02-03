@@ -4,7 +4,7 @@ Signature analyzes Hi-C/Omni-C data to estimate significant interactions for bot
 
 ## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
-Rough guidlines for requirments, based on running 3 datasets, highest resolutions available:
+Rough guidelines for requirements, based on running 3 datasets, highest resolutions available:
    - Inter-chromosomal analysis (trans, max 500 Kb): ~16Gb memory, ~12hr runtime
    - Intra-chromosomal analysis (cis, max 50 Kb): ~100Gb memory, ~3 days runtime
 ### Modules
@@ -28,7 +28,7 @@ Rough guidlines for requirments, based on running 3 datasets, highest resolution
 <br/>
 
 ## Running interaction analysis with Signature
-Signature runs with one simple shell script - the *user-friendly scheduler* - which has been generated to submit your job in batches, up to 3 datasets per bacth. Larger batches can be submitted depnding on your HPC's processing power and memory limits (see *Making user-specific modifications* section). 
+Signature runs with one simple shell script - the *user-friendly scheduler* - which has been generated to submit your job in batches, up to 3 datasets per batch. Larger batches can be submitted depending on your HPC's processing power and memory limits (see *Making user-specific modifications* section). 
 
 ### To get started:
 1. In https://github.com/MaassLab/Signature, press the ***<>Code*** drop-down button
@@ -50,7 +50,7 @@ There are only 2 sections that need to be filled in.
 - *path* is the full pathway to the LWLR folder inside the directory that "Signature-main.zip" was extracted in (*/.../Signature-main/Pipeline/LWLR*)
 - *coolerpath* is the full pathway to the folder where the saved cooler data is
 - *analysis* can be either **cis** for intra-chromosomal interactions or **trans** for inter-chromosomal interactions
-- *trans* can be either **1vsAll** indicating a genome-to-genome comparison (the default choice for trans) or **pairwsise** indicating a chromosome-to-chromosome comparison
+- *trans* can be either **1vsAll** indicating a genome-to-genome comparison (the default choice for trans) or **pairwise** indicating a chromosome-to-chromosome comparison
 - *resolution* can be one of the following **1000000**, **500000**, **250000**, **100000**, **50000** (only **1000000** or **500000** for trans)
 - *res* is your chosen resolution condensed (i.e. **1MB**, **500KB**, **250KB**, **100KB**, **50KB**)
 <br/>
