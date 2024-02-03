@@ -20,6 +20,11 @@ Note: the above information from step 5 can be seen filled-in in an exmaple scri
 
 After Signature is done running the demo data, the results can be found in **"*/your/extracted/location*/Signature-main/Pipeline/LWLR/results/output"** and will look something like this:
 
+    | ID                                                | Astrocyte_Spine       | H9hESC_day00_Zhang     |
+    |---------------------------------------------------|-----------------------|------------------------|
+    | Achr1.10000000.11000000Bchr10.0.1000000           | 1.420                 | 1.048                  |
+    | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
+    | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
 
 <br/>   
 ## Community Detection
