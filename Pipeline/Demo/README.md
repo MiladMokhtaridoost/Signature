@@ -28,6 +28,9 @@ After Signature is done running the demo data, the results can be found in "*/yo
    | Achr1.10000000.11000000Bchr10.0.1000000           | 1.420                 | 1.048                  |
    | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
    | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
+
+Signature ran this toy data in about 10 mins utilizing 0.52 GB of memory (note: toy data contains ~4-5% of the origional data)
+
 <br/>
    
 ## Community Detection
