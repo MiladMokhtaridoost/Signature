@@ -47,18 +47,27 @@ There are only 2 sections that need to be filled in.
 - Ensure that the dataset names match the folder names in the Cooler output
 
 **Analysis info section**
-- *path* is the full pathway to the LWLR folder inside the directory **"Signature-main.zip"** was extracted in
+- *path* is the full pathway to the LWLR folder inside the directory that "Signature-main.zip" was extracted in
 - *coolerpath* is the full pathway to the folder where the saved cooler data is
 - *analysis* can be either **cis** for intra-chromosomal interactions or **trans** for inter-chromosomal interactions
-- *trans* can be either **1vsAll* indicating a genome-wide "all-to-all" approach (the default choice for trans) or 
+- *trans* can be either **1vsAll** indicating a genome-to-genome comparison (the default choice for trans) or **pairwsise** indicating a chromosome-to-chromosome comparison
+- *resolution* can be one of the following **1000000**, **500000**, **250000**, **100000**, **50000** (only **1000000** or **500000** for trans)
+- *res* is your chosen resolution condensed (i.e. **1MB**, **500KB**, **250KB**, **100KB**, **50KB**)
+<br/>
  
 ## Making user-specific modifications
-The _user-friendly scheduler_ is made to process signature in batches of 3, but can be edited to process more.
+The *user-friendly scheduler* is made to process signature in batches of 3, but can be edited to process more.
 
 **The following adjustments will need to be made**
-
-1. In the shell script, below line 15, add a new line for each additional cell you want to include following the same format ("**cell4=**     " etc.)
-2. In the shell script, below line 42, as you did in step 1, add corresponding lines for each new cell you want to include following the same format ("**echo $cell4 >> $path/batch$batch\_cells.txt**" etc.)
-4. String replace "$cell1.$cell2.$cell3" with your new cell-variable string
-   - Ex. using _sed_ in command line for a batch of 5 cells:  sed -i 's/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.$cell4.$cell5/g' batch_create_signature_files.sh
+1. In the shell script, below line 15, add a new line for each additional cell you want to include (following the same format as line 15) <br/>
+   - Example with two additional datasets: <br/>
+   **cell4=** <br/>
+   **cell5=**
+2. In the shell script, below line 42, as you did in step 1, add corresponding lines for each new cell you want to include (following the same format as line 42) <br/>
+   - Example with two additional datasets: <br/>
+   **echo $cell4 >> $path/batch$batch\_cells.txt** <br/>
+   **echo $cell5 >> $path/batch$batch\_cells.txt**
+3. String replace "$cell1.$cell2.$cell3" with your new cell-variable string
+   - Example using *sed* in command line for a batch of 5 cells: <br/>
+   sed -i 's/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.**$cell4.$cell5**/g' batch_create_signature_files.sh
 
