@@ -36,7 +36,7 @@ Arguments:
 
 ## 4. gonosomes
 
-We utilized logistic regression on the SAM files of datasets with known sex to train a classifier. This classifier was trained on the proportion of gonosome-mapped reads to autosome-mapped reads. We then applied the trained classifier to predict the sex of datasets without sex labels. First, _gonosome_PMR.sh_ is used to generate the proportional mapped reads (PMR) file for each unknown dataset. Then, _gonosome_prediction_LogisticRegression.sh_ is used to format the PMR data and run it through the logistic regression model.
+This step is important for processing datasets with an unknown biological sex. We utilized logistic regression on the SAM files of datasets with known sex to train a classifier. This classifier was trained on the proportion of gonosome-mapped reads to autosome-mapped reads. We then applied the trained classifier to predict the sex of datasets without sex labels. First, _gonosome_PMR.sh_ is used to generate the proportional mapped reads (PMR) file for each unknown dataset. Then, _gonosome_prediction_LogisticRegression.sh_ is used to format the PMR data and run it through the logistic regression model. NOTE: this prediction is trained on ~diploid datasets. 
 
 ### gonosome_PMR.sh
 Required modules:
