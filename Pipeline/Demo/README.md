@@ -1,5 +1,5 @@
 # Toy data for running Signature's LWLR and Community Detection (Demo)
-This "Demo" folder will act as your output directory from running _Cooler_. With _Cooler_, all results are generated in a seperate folder for each dataset/cell type analyzed. In this case, 2 cell types would have been processed separetly: H9hESCs and Astrocytes.  
+This "Demo" folder will act as your output directory from running _Cooler_. With _Cooler_, all results are generated in a separate folder for each dataset/cell type analyzed. In this case, 2 cell types would have been processed separately: H9hESCs and Astrocytes.  
 <br/>
 
 ## LWLR
@@ -16,7 +16,7 @@ Signature's LWLR can process both cis and trans data. The same script can be use
    -  the cooler output data can be found in **"*/your/extracted/location*/Signature-main/Pipeline/Demo"**
    -  the data will be processed in **"trans"** for a **"1vsAll"** approach at a resolution of **"1000000"** (i.e. **"1MB"**)
 
-Note: the above information from step 5 can be seen filled-in in an exmaple script (/.../Signature-main/Pipeline/LWLR/batch_create_signature_files_DemoExample.sh)  
+Note: the above information from step 5 can be seen filled-in in an example script (/.../Signature-main/Pipeline/LWLR/batch_create_signature_files_DemoExample.sh)  
 <br/>
 
 After Signature is done running the demo data, the results can be found in "*/your/extracted/location*/Signature-main/Pipeline/LWLR/results/output" and will look something like this:
@@ -29,7 +29,7 @@ After Signature is done running the demo data, the results can be found in "*/yo
    | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
    | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
 
-Signature ran this toy data in about 10 mins utilizing 0.52 GB of memory (note: toy data contains ~4-5% of the origional data)
+Signature ran this toy data in about 10 mins utilizing 0.52 GB of memory (note: toy data contains ~4-5% of the original data)
 
 <br/>
    
