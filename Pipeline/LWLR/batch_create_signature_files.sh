@@ -10,9 +10,9 @@
 #----------------EDIT CELL INFO------------------#
 batch=		# number  ex.  [4]
 
-cell1=		# cell_type  ex. [Astrocyte_spine]
-cell2=		# cell_type  ex. [Astrocyte_cerebellum]
-cell3=		# cell_type  ex. [Aorta_Leung]
+cell1=		# cell_type1_dataset_name  ex. [Astrocyte_spine]
+cell2=		# cell_type2_dataset_name  ex. [Astrocyte_cerebellum]
+cell3=		# cell_type3_dataset_name  ex. [Aorta_Leung]
 #------------------------------------------------#
 
 #---------------EDIT ANALYSIS INFO---------------#
