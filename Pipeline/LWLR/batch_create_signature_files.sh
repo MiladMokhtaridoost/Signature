@@ -36,7 +36,6 @@ path=$path/results
 mkdir $path
 
 # LIST OF CELLS
-
 echo $cell1 > $path/batch$batch\_cells.txt
 echo $cell2 >> $path/batch$batch\_cells.txt
 echo $cell3 >> $path/batch$batch\_cells.txt
