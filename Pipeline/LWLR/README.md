@@ -88,13 +88,13 @@ After submitting batch_create_signature_files.sh, a new folder will be generated
 **output**
    - Directory for Signature's output files (z-scores, p-values, and q-values)
    - Folders for each batch containing tab-separated text files of interacting regions
-      - [cells.analysis].zscoresall.txt  &nbsp;  # all possible interactions and their z-scores, cell types merged into single file
-      - [cells.analysis].zscores.txt  &nbsp;     # significant (p < 0.05) interactions and their z-scores, cell types merged into single file
-      - [cells.analysis].pvalueAll.txt  &nbsp;   # all possible interactions and their p-values, cell types merged into single file
-      - [cells.analysis].pvalue.txt  &nbsp;      # significant (p < 0.05) interactions and their p-values, cell types merged into single file
-      - [cells.analysis].qvalueAll.txt  &nbsp;   # all possible interactions and their q-values, cell types merged into single file
-      - [cells.analysis].qvalue.txt  &nbsp;      # significant (q < 0.05) interactions and their q-values, cell types merged into single file
-      - [cell.analysis].pvalue_neg.txt  &nbsp;     # significant negative (p < 0.05, z < 0) interactions and their p-values, one per cell type
-      - [cell.analysis].pvalue_pos.txt  &nbsp;     # significant positive (p < 0.05, z > 0) interactions and their p-values, one per cell type
-      - [cell.analysis].qvalue_neg.txt  &nbsp;     # significant negative (q < 0.05, z < 0) interactions and their q-values, one per cell type
-      - [cell.analysis].qvalue_pos.txt  &nbsp;     # significant positive (q < 0.05, z > 0) interactions and their q-values, one per cell type
+      - [cells.analysis].zscoresall.txt $\hspace{12pt}$   # all possible interactions and their z-scores, cell types merged into single file
+      - [cells.analysis].zscores.txt    $\hspace{24pt}$   # significant (p < 0.05) interactions and their z-scores, cell types merged into single file
+      - [cells.analysis].pvalueAll.txt  $\hspace{12pt}$   # all possible interactions and their p-values, cell types merged into single file
+      - [cells.analysis].pvalue.txt     $\hspace{30pt}$   # significant (p < 0.05) interactions and their p-values, cell types merged into single file
+      - [cells.analysis].qvalueAll.txt  $\hspace{16pt}$   # all possible interactions and their q-values, cell types merged into single file
+      - [cells.analysis].qvalue.txt     $\hspace{30pt}$   # significant (q < 0.05) interactions and their q-values, cell types merged into single file
+      - [cell.analysis].pvalue_neg.txt  $\hspace{12pt}$   # significant negative (p < 0.05, z < 0) interactions and their p-values, one per cell type
+      - [cell.analysis].pvalue_pos.txt  $\hspace{12pt}$   # significant positive (p < 0.05, z > 0) interactions and their p-values, one per cell type
+      - [cell.analysis].qvalue_neg.txt  $\hspace{12pt}$   # significant negative (q < 0.05, z < 0) interactions and their q-values, one per cell type
+      - [cell.analysis].qvalue_pos.txt  $\hspace{12pt}$   # significant positive (q < 0.05, z > 0) interactions and their q-values, one per cell type
