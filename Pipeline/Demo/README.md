@@ -14,7 +14,7 @@ Signature's LWLR can process both cis and trans data. The same script can be use
    -  this is the **first** batch of cells, which is processing 2 cell types with the dataset names **"Astrocyte_Spine"** and **"H9hESC_day00_Zhang"**
    -  the pathway is **"*/your/extracted/location*/Signature-main/Pipeline/LWLR"**
    -  the cooler output data can be found in **"*/your/extracted/location*/Signature-main/Pipeline/Demo"**
-   -  the data will be processed in **"trans"** for a **"1vsAll"** analysis at a resolution of **"1000000"** (i.e. **"1MB"**)
+   -  the data will be processed in **"trans"** for a **"1vsAll"** approach at a resolution of **"1000000"** (i.e. **"1MB"**)
 
 Note: the above information from step 5 can be seen filled-in in an exmaple script (/.../Signature-main/Pipeline/LWLR/batch_create_signature_files_DemoExample.sh)  
 <br/>
