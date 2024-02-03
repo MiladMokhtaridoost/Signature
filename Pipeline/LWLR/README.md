@@ -4,8 +4,9 @@ Signature analyzes Hi-C/Omni-C data to estimate significant interactions for bot
 
 ## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
-   - For NHCC (trans) analysis of 3 datasets: ~16Gb memory, ~12hr runtime
-   - For intra-chromosomal interaction (cis) analysis of 3 datasets: ~100Gb memory, ~3 days runtime
+Rough guidlines for requirments, based on running 3 datasets, highest resolutions available:
+   - Inter-chromosomal analysis (trans, max 500 Kb): ~16Gb memory, ~12hr runtime
+   - Intra-chromosomal analysis (cis, max 50 Kb): ~100Gb memory, ~3 days runtime
 ### Modules
    - bedtools/2.24.0
    - R/4.2.1
@@ -22,30 +23,42 @@ Signature analyzes Hi-C/Omni-C data to estimate significant interactions for bot
    - note: this script works for 1-3 cells without modification, for 4+ cells see _Making user-specific modifications_ section below)
 ### scripts_Signature
    - folder containing all scripts required to run Signature
-      1. main shell script with the supervised machine learning (_run_Signature.sh_)
-      2. dependency scripts for machine learning (_7 R, 1 Awk, 1 shell_)
-
-<br/><br/>(Keep editting here...)<br/><br/><br/>
-
-
+      1. main shell script with the supervised machine learning (*run_Signature.sh*)
+      2. dependency scripts for machine learning (*7 R, 1 Awk, 1 shell*)
+<br/>
 
 ## Running interaction analysis with Signature
-Signature runs with one simple shell script - the _user-friendly scheduler_ - which has been generated to submit your job in batches of 3 datasets (cell types). Larger batches can be submitted depnding on your HPC's processing power and memory limits (see _Making user-specific modifications_ section). 
+Signature runs with one simple shell script - the *user-friendly scheduler* - which has been generated to submit your job in batches, up to 3 datasets per bacth. Larger batches can be submitted depnding on your HPC's processing power and memory limits (see *Making user-specific modifications* section). 
 
-To get started:
-1.	Split up the cells/datasets you want to analyze into batches of 3 and assign each batch a number
-2.	Create a general directory where all your scripts, schedulers, output folders etc. will be generated
-3.	Copy _batch_create_signature_files.sh_ from above into your directory from step 2
-4.	Rename the shell script to be specific to your analysis you want
-5.	Make appropriate modifications to the EDIT sections for that batch (line 11-26)
+### To get started:
+1. In https://github.com/MaassLab/Signature, press the ***<>Code*** drop-down button
+2. Press ***Download ZIP***
+3. Extract ZIP folder (**"Signature-main.zip"**) to your directory of choice 
+4. Inside *"Signature-main"*, navigate to the directory *"Pipeline"* then *"LWLR"*
+5. Within this directory, you will find everything required to run Signature's LWLR
 
-# Making user-specific modifications
-The _user-friendly scheduler_ is made to process signature in batches of 3, but can be edited to process more or less.
+Note: This pathway is now referred to as "path" in line 19 of **"batch_create_signature_files.sh"**
 
-The following adjustments will need to be made:
+### Filling in the script
+There are only 2 sections that need to be filled in. 
 
-1. In the shell script, below line 15, add a new line for each additional cell you want to include following the same format ("cell4=     " etc.)
-2. In the shell script, below line 37, as you did in step 1, add corresponding lines for each new cell you want to include following the same format ( "echo $cell4 > $path/batch$batch\_cells.txt" etc. )  
-3. String replace "$cell1.$cell2.$cell3" with your new cell-variable string
+**Cell info section**
+- Make sure that each time you run this script for a new batch of cells you are assigning a unique batch number
+- Ensure that the dataset names match the folder names in the Cooler output
+
+**Analysis info section**
+- *path* is the full pathway to the LWLR folder inside the directory **"Signature-main.zip"** was extracted in
+- *coolerpath* is the full pathway to the folder where the saved cooler data is
+- *analysis* can be either **cis** for intra-chromosomal interactions or **trans** for inter-chromosomal interactions
+- *trans* can be either **1vsAll* indicating a genome-wide "all-to-all" approach (the default choice for trans) or 
+ 
+## Making user-specific modifications
+The _user-friendly scheduler_ is made to process signature in batches of 3, but can be edited to process more.
+
+**The following adjustments will need to be made**
+
+1. In the shell script, below line 15, add a new line for each additional cell you want to include following the same format ("**cell4=**     " etc.)
+2. In the shell script, below line 42, as you did in step 1, add corresponding lines for each new cell you want to include following the same format ("**echo $cell4 >> $path/batch$batch\_cells.txt**" etc.)
+4. String replace "$cell1.$cell2.$cell3" with your new cell-variable string
    - Ex. using _sed_ in command line for a batch of 5 cells:  sed -i 's/$cell1.$cell2.$cell3/$cell1.$cell2.$cell3.$cell4.$cell5/g' batch_create_signature_files.sh
 
