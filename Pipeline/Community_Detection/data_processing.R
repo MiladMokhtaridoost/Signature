@@ -1,19 +1,13 @@
 library(dplyr)
 library(tidyr)
 
-options(echo=F)
-args <- commandArgs(trailingOnly = TRUE)
-DATA_PATH <- args[2]
-RESULT_PATH <- args[3]
-DATA_PATH <- "Z:/3D-flow/normalized_data_4DNuc_pipeline/human/Test"
-RESULT_PATH <- "Z:/Milad/Community_detection/GitHub"
-
-#resolution <- as.numeric(args[[4]])
+PATHWAY <- "../Demo"
 resolution <- 1000000
 
 cells <- c("Astrocyte_Spine",
            "H9hESC_day00_Zhang")
 
+for 
 CELL <- cells[as.numeric(args[[1]])]
 CELL <- cells[2]
 ###DATA_PATH <- "Z:/3D-flow/normalized_data_4DNuc_pipeline/human/CHLA9_Maass"
