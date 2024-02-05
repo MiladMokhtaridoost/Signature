@@ -246,6 +246,7 @@ prtT=1
 		mkdir -p $out/delete.$cell
 		echo "$out/delete.$cell"
 		mv $out/chr* $out/delete.$cell
+  		rm -R $out/delete.*
 	echo -e "\n-----------------------------------------------------------"
 	echo -e "-----------------------------------------------------------"
 	;;
@@ -394,7 +395,7 @@ echo "Writting final output files ..."
 echo "-----------------------------------------------------------"
 
 
-#final cleang up 
+#final clean up 
 rm -r $out/*tmp*
 rm $out/0
 rm $out/*mergeR*
