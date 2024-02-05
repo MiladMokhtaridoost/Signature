@@ -39,8 +39,8 @@ Signature runs with one simple shell script - the *user-friendly scheduler* - wh
 
 Note: This pathway is now referred to as "path" in line 19 of **"batch_create_signature_files.sh"**
 
-### Filling in the script
-There are only 2 sections that need to be filled in. 
+### Filling in the script:
+There are only 2 sections of **"batch_create_signature_files.sh"** that need to be filled in. 
 
 **Cell info section**
 - *batch* is any numerical value (making sure that each new batch of cells is assigned a unique batch number)
