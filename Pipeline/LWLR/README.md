@@ -98,3 +98,11 @@ After submitting batch_create_signature_files.sh, a new folder will be generated
       - [cell.analysis].pvalue_pos.txt  $\hspace{12pt}$   # significant positive (p < 0.05, z > 0) interactions and their p-values, one per cell type
       - [cell.analysis].qvalue_neg.txt  $\hspace{12pt}$   # significant negative (q < 0.05, z < 0) interactions and their q-values, one per cell type
       - [cell.analysis].qvalue_pos.txt  $\hspace{12pt}$   # significant positive (q < 0.05, z > 0) interactions and their q-values, one per cell type
+
+**Example Astrocyte_Spine.H9hESC_day00_Zhang..trans1vsAll.1MB.zscoresall.txt**
+
+   | ID                                                | Astrocyte_Spine       | H9hESC_day00_Zhang     |
+   |:--------------------------------------------------|:----------------------|:-----------------------|
+   | Achr1.10000000.11000000Bchr10.0.1000000           | 1.420                 | 1.048                  |
+   | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
+   | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
