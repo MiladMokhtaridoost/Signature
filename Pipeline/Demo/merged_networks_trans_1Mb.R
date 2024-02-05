@@ -11,7 +11,7 @@ cells <- c("Astrocyte_Spine",
 
 read_function <- function(i){
   
-  read.table(sprintf("./%s/%s_network.txt",cells[i],cells[i]), header = T)
+  read.table(sprintf("./%s/%s_merged_1MB_network.txt",cells[i],cells[i]), header = T)
   
 }
 
