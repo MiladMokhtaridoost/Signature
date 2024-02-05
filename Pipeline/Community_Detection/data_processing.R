@@ -3,11 +3,13 @@ library(tidyr)
 
 options(echo=F)
 args <- commandArgs(trailingOnly = TRUE)
-
 DATA_PATH <- args[2]
 RESULT_PATH <- args[3]
-resolution <- as.numeric(args[[4]])
+DATA_PATH <- "Z:/3D-flow/normalized_data_4DNuc_pipeline/human/Test"
+RESULT_PATH <- "Z:/Milad/Community_detection/GitHub"
 
+#resolution <- as.numeric(args[[4]])
+resolution <- 1000000
 cells <- c("Adrenal_gland_Schmitt",
            "Aorta_Leung",
            "Astrocyte_Cerebellum",
@@ -69,30 +71,23 @@ cells <- c("Adrenal_gland_Schmitt",
            "Thymus_Leung",
            "Trophectoderm_cell_Dixon",
            "Ventricular_cardiomyocyte_day80_Zhang",
-           "VSMC_day21_Maass",
-           "TC32_Maass",
-           "CHLA9_Maass",
-           "COGE352_Maass")
-CELL <- cells[as.numeric(args[[1]])]
+           "VSMC_day21_Maass")
 
-int_table <- read.table(sprintf("%s/%s/trans.1000000_iced.sorted.txt", DATA_PATH, CELL))
+cells <- c("Astrocyte_Spine",
+           "H9hESC_day00_Zhang")
+
+CELL <- cells[as.numeric(args[[1]])]
+CELL <- cells[2]
+###DATA_PATH <- "Z:/3D-flow/normalized_data_4DNuc_pipeline/human/CHLA9_Maass"
+
+#int_table <- read.table(sprintf("%s/%s/trans.100000_iced.sorted.txt", DATA_PATH, CELL))
+#int_table <- read.table(sprintf("%s/%s/trans.100000_iced.sorted.txt", DATA_PATH, CELL))
+int_table <- read.delim(sprintf("%s/%s/%s.pairs.res1000000.cool.txt",DATA_PATH,CELL,CELL), header = F)
 
 cat(sprintf("Cell type = %s", CELL), sep="\n")
+colnames(int_table) <- c("chrA", "stA", "endA","chrB", "stB", "endB", "rawread", "freq")
 
-colnames(int_table) <- c("ID", "freq")
-
-int_table$ID <- sub("B", "\\.B", as.character(int_table$ID))
-
-int_table <- int_table %>% separate(ID, sep = "\\__", into = c("anch","tar"), remove = FALSE)
-int_table <- int_table %>% separate(anch, sep = "\\/", into = c("chrA", "stA", "endA"), remove = FALSE)
-int_table <- int_table %>% separate(tar, sep = "\\/", into = c("chrB", "stB", "endB"), remove = FALSE)
-
-int_table <- int_table[,c("chrA", "stA", "endA","chrB", "stB", "endB", "freq")]
-int_table$chrA <- sub("anchor_", "", as.character(int_table$chrA))
-int_table$chrB <- sub("target_", "", as.character(int_table$chrB))
-
-colnames(int_table) <- c("chrA", "stA", "endA","chrB", "stB", "endB", "freq")
-
+int_table <- int_table[!is.na(int_table$freq),]
 int_table <- int_table[,c("chrA", "stA", "chrB", "stB", "freq")]
 
 ########deleting rows correspond to chrM
@@ -103,7 +98,7 @@ int_table$chrB <- sub("chr", "", as.character(int_table$chrB))
 
 resolution <- as.numeric(resolution)
 
-int_table$stA <- as.numeric(int_table$stA)/resolution
+int_table$stA <- as.numeric(int_table$stA)/resolution 
 int_table$stB <- as.numeric(int_table$stB)/resolution
 
 int_table$ID_chrA <- paste(int_table$chrA, int_table$stA, sep = "_")
@@ -114,4 +109,5 @@ int_table$freq <- as.numeric(int_table$freq)
 int_table <- int_table[,c("ID_chrA", "ID_chrB", "freq")]
 
 #########################################################
+#write.csv(int_table, sprintf("%s/%s_network.csv", RESULT_PATH, CELL))
 write.table(int_table, sprintf("%s/%s_network.txt", RESULT_PATH, CELL), row.names = F)
