@@ -41,15 +41,15 @@ We established Signature's Community Detection in a way that process cis and tra
 2. Press Download ZIP
 3. Extract ZIP folder (_"Signature-main.zip"_) to your directory of choice 
 4. Navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
-5. -  Execute **data_processing.R** script without modifications.
+5. Execute **data_processing.R** script without modifications
    -  The script can be efficiently run on demo datasets using any standard computer. For full datasets, we recommend utilizing High-Performance Computing (HPC) to process different datasets in parallel.
    -  The output will be a reformatted version of cooler data for each dataset, including three columns: binA ID, binB ID, and the corresponding Hi-C weight. IDs are in [chr]_[start_of_bin(MB)] format. For instance, ID "6_41" refers to the genomic region chr6:41000000-42000000.  
    -  Output files will be saved in their respective folders, e.g., **Demo/Astrocyte_Spine/Astrocyte_Spine_network.txt**
-6. -  Run the **merge_networks.R** script to merge Hi-C interaction weights of every bin (cis and trans) across all datasets by averaging them.
+6. Run the **merge_networks.R** script to merge Hi-C interaction weights of every bin (cis and trans) across all datasets by averaging them
    -  The script can be run efficiently on demo datasets using any computer. For a complete dataset collection (62 datasets), standard computers are suitable, but using HPC is advised for faster processing.
    -  The output will follow the same format as the previous step, containing merged data from all datasets in a single file.
    -  The output will be saved in the Demo folder, e.g., **Demo/average_1MB_network.txt**
-7. -  Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements.
+7. Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements.
    -  This step is performant on both demo datasets and full datasets, accommodating any computer and HPC.
    -  The output will be a two-column file, with the first column representing the bin ID and the second column indicating the assigned community number.
    -  Parameters are set to yield 46 communities for full datasets, while demo datasets will result in fewer than 46 communities.
