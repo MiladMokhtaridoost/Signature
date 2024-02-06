@@ -34,12 +34,12 @@ Signature ran this toy data in about 10 mins utilizing 0.52 GB of memory (note: 
 <br/>
    
 ## Community Detection
-MILAD FILL SOMETHING IN HERE. The Demo directory contains toy data at the 1MB resolution (input for Community Detection). These files are named "[cell].pairs.res1000000.cool.txt".
+We established Signature's Community Detection in a way that process cis and trans data alltogether. However, users can use it to analyze only cis or only trans. The Demo directory contains toy data at the 1MB resolution (input for Community Detection). These files are named "[cell].pairs.res1000000.cool.txt" and each are located in their corresponding cell type folder.
 
 ### Instructions for running demo
 1. In https://github.com/MaassLab/Signature, press the <>Code drop-down button
 2. Press Download ZIP
 3. Extract ZIP folder (_"Signature-main.zip"_) to your directory of choice 
-4. In the command line, navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
-5. Fill in the script ....?
-6. continue here Milad
+4. Navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
+5. First run data_processing.R script without any changes. (This can be run on Demo datasets very fast using any computer. We suggest to use HPC with for full datasets running on different datasets in parallel)
+
