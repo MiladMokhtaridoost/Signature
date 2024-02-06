@@ -52,4 +52,4 @@ We established Signature's Community Detection in a way that process cis and tra
 7. The final step is applying Community Detectipn on the merged Hi-C data. For more information, including requierements please read README file in Community_Detection folder.
    -  This can be run on Demo datasets and full datasets very fast using any computer and HPC. 
    -  The output will be a two-column file, first column shows the ID of a bin and the second column shows the assigned community number. The parameters set in a way that result with full datasets will be 46 communities. However, the Demo file will be resulted in less than 46 cpmmunities.
-   -  The output will be saved in the Demo folder (**Demo/average_1MB_network.txt**)
+   -  The final output will be saved in the Demo folder (**Demo/average_netwrok_comms.txt**)
