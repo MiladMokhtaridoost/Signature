@@ -1,46 +1,46 @@
 # -*- coding: utf-8 -*-
 """
-
 """
 import networkx as nx
 import pandas as pd
-#import os
 import pycombo
-import sys
 
-data_folder = sys.argv[1]
-print(f'data folder = {data_folder}')
-result_folder = sys.argv[2]
-print(f'result folder = {result_folder}')
+### set the directory where your data is located
+data_folder = '../Demo'
 
 ### load the dataset
-data = pd.read_csv(f'{data_folder}/average_1MB_network.txt', usecols=['ID_chrA', 'ID_chrB', 'freq'], delimiter=' ')
 
-### shifting all weights to positive (in case there is any negative value)
-min_weight = data['freq'].min()
-data['freq'] = data['freq'] + abs(min_weight)
+data = pd.read_csv(
+    f'{data_folder}/average_1MB_network.txt',
+    usecols=['ID_chrA', 'ID_chrB', 'average'],
+    delimiter='\t'
+)
 
+print(data.head)
 
-### constructing network
-graph = nx.from_pandas_edgelist(data, source='ID_chrA', target='ID_chrB', edge_attr='freq')
+    #if __name__ == "__main__":
+
+min_weight = data['average'].min()
+data['average'] = data['average'] + abs(min_weight)
+
+graph = nx.from_pandas_edgelist(data, source='ID_chrA', target='ID_chrB', edge_attr='average')
 
 print(nx.number_of_nodes(graph))
 print(nx.number_of_edges(graph))
-
-### apply pycombo (46 communities)
-communities = pycombo.execute(graph, 'freq', modularity_resolution=1.4, max_communities=46)
+    # Solve
+communities = pycombo.execute(graph, 'average', modularity_resolution=1.2, max_communities=46)
 
 comms = {}
 for node, c in communities[0].items():
     if c not in comms:
-        comms[c] = [node]
+            comms[c] = [node]
     else:
             
-        comms[c].append(node)
+            comms[c].append(node)
 print(len(comms))
     
 ##### each node in a row
-with open(f'{result_folder}/final_comms.txt', 'w') as file:
+with open(f'{data_folder}/average_netwrok_comms.txt', 'w') as file:
     # create a list to store the rows of the dataframe
     rows = []
     # initialize the community ID counter to 1
@@ -57,3 +57,4 @@ with open(f'{result_folder}/final_comms.txt', 'w') as file:
     df = pd.DataFrame(rows, columns=['ID name', 'Community ID'])
     # write the dataframe to the file as a CSV
     df.to_csv(file, index=False)
+        
