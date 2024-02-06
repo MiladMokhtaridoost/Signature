@@ -43,9 +43,13 @@ We established Signature's Community Detection in a way that process cis and tra
 4. Navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
 5. First, run data_processing.R script without any changes.
    -  This can be run on Demo datasets very fast using any computer. We suggest to use HPC for full datasets running on different datasets in parallel.
-   -  The output will be a re-formatted version of cooler data for each dataset, including two columns. First column represents the ID of bin in [chr]_[start_of_bin(MB)] and the second column shows the Hi_C weight. For instance, ID 6_41 refers to chr6:41000000.42000000.  
-   -  The outputs will be saved in theri corresponding folder (e.g.       **Astrocyte_Spine/Astrocyte_Spine_network.txt**)
+   -  The output will be a re-formatted version of cooler data for each dataset, including three columns. First two columns represent the ID of binA and binB in [chr]_[start_of_bin(MB)] format and the third column shows the Hi_C weight. For instance, ID 6_41 refers to chr6:41000000.42000000.  
+   -  The outputs will be saved in their corresponding folder (e.g.       **Demo/Astrocyte_Spine/Astrocyte_Spine_network.txt**)
 6. Secondly, run merge_networks.R to merge the Hi-C interaction weights of every single bin (cis and trans) of all datasets by taking the average of them.
    -  This can be run on Demo datasets very fast using any computer. Normal computers can handle this code for full collection of datasets (62 datasets), however, for faster performance using HPC is suggested. 
-   -  The output will be a re-formatted version of cooler data for each dataset, which will be saved in theri corresponding folder (e.g.       **Astrocyte_Spine/Astrocyte_Spine_network.txt**)
-   -  The output of this step is the input of the next step  
+   -  The output will be in a same format as the previous step, but merged all datasets in one file.
+   -  The output will be saved in the Demo folder (**Demo/average_1MB_network.txt**)
+7. The final step is applying Community Detectipn on the merged Hi-C data. For more information, including requierements please read README file in Community_Detection folder.
+   -  This can be run on Demo datasets and full datasets very fast using any computer and HPC. 
+   -  The output will be in a same format as the previous step, but merged all datasets in one file.
+   -  The output will be saved in the Demo folder (**Demo/average_1MB_network.txt**)
