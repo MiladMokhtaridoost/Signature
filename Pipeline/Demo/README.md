@@ -41,5 +41,11 @@ We established Signature's Community Detection in a way that process cis and tra
 2. Press Download ZIP
 3. Extract ZIP folder (_"Signature-main.zip"_) to your directory of choice 
 4. Navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
-5. First run data_processing.R script without any changes. (This can be run on Demo datasets very fast using any computer. We suggest to use HPC with for full datasets running on different datasets in parallel)
-
+5. First, run data_processing.R script without any changes.
+   -  This can be run on Demo datasets very fast using any computer. We suggest to use HPC for full datasets running on different datasets in parallel.
+   -  The output will be a re-formatted version of cooler data for each dataset, including two columns. First column represents the ID of bin in [chr]_[start_of_bin(MB)] and the second column shows the Hi_C weight. For instance, ID 6_41 refers to chr6:41000000.42000000.  
+   -  The outputs will be saved in theri corresponding folder (e.g.       **Astrocyte_Spine/Astrocyte_Spine_network.txt**)
+6. Secondly, run merge_network_trans_1MB.R to merge the Hi-C interaction weights of every single bin (cis and trans) of all datasets by taking the average of them.
+   -  This can be run on Demo datasets very fast using any computer. Normal computers can handle this code for full collection of datasets (62 datasets), however, for faster performance using HPC is suggested. 
+   -  The output will be a re-formatted version of cooler data for each dataset, which will be saved in theri corresponding folder (e.g.       **Astrocyte_Spine/Astrocyte_Spine_network.txt**)
+   -  The output of this step is the input of the next step  
