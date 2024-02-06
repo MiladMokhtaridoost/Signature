@@ -53,4 +53,4 @@ We established Signature's Community Detection in a way that process cis and tra
    -  This step is performant on both demo datasets and full datasets, accommodating any computer and HPC.
    -  The output will be a two-column file, with the first column representing the bin ID and the second column indicating the assigned community number.
    -  Parameters are set to yield 46 communities for full datasets, while demo datasets will result in fewer than 46 communities.
-   -  The final output will be saved in the Demo folder, e.g., **Demo/average_netwrok_comms.txt**
+   -  The final output will be saved in the Demo folder, e.g., **Demo/average_network_comms.txt**
