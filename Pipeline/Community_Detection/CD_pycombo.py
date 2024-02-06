@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar 31 15:37:26 2023
 
-@author: Milad Mokhtaridoost
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 14 19:06:11 2023
-
-@author: Milad Mokhtaridoost
 """
 import networkx as nx
 import pandas as pd
