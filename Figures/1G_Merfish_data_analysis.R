@@ -147,8 +147,7 @@ for (i in 1:nrow(merged_pos)) {
   anch <- union(condition1_anch, condition2_anch)
   
   mean_x_anchor <- mean(genomic_scale_split$x.nm.[anch], na.rm = T)
-  #non_na_x_value_anchor  <- x_value_anchor[!is.na(x_value_anchor)]
-  #mean_X_anchor <- mean(non_na_x_value_anchor, na.rm = T)
+
   
   mean_y_anchor <- mean(genomic_scale_split$y.nm.[anch], na.rm = T)
   
@@ -304,11 +303,11 @@ neg_400
 #########################################################
 pos_data <- c(pos_50,pos_100,pos_150,pos_200,pos_250,pos_300,pos_350,pos_400)
 neg_data <- c(neg_50,neg_100,neg_150,neg_200,neg_250,neg_300,neg_350,neg_400) 
-df  <- data.frame(distance = c(pos_data,neg_data),
+distance_data  <- data.frame(distance = c(pos_data,neg_data),
                   group = c(50,100,150,200,250,300,350,400,50,100,150,200,250,300,350,400),type = rep(c(rep("pos",8),rep("neg", 8))))
 
 
-number_plot_not_cumulative<- ggplot(df,aes(x=factor(group),y= distance,fill= type))+
+number_plot_not_cumulative<- ggplot(distance_data,aes(x=factor(group),y= distance,fill= type))+
   geom_bar(position = "dodge",stat= "identity")+
   labs(title = "number of positive and negative significant interactions across different distances",
        x = "Distance (Nm)", y= "Number of interactions")+
@@ -317,15 +316,8 @@ number_plot_not_cumulative<- ggplot(df,aes(x=factor(group),y= distance,fill= typ
                                                                       panel.background = element_rect(fill = "white", colour = NA),
                                                                       panel.grid.major = element_blank(),
                                                                       panel.grid.minor = element_blank(),
-                                                                      # panel.spacing = unit(0.25, "lines"),
                                                                       plot.margin = unit(c(0.5,0.5,0.5,0.5), "cm"),
-                                                                      #change the colour of facet label background
-                                                                      #strip.background = element_rect(fill = "#E6E1EA"),
-                                                                      #remove space between facets
-                                                                      # panel.spacing.x=unit(0, "lines"),
-                                                                      #legend.key = element_blank(),
                                                                       legend.background=element_blank(),
-                                                                      #legend background
                                                                       legend.key = element_rect(fill = NA),
                                                                       legend.title = element_text(vjust = 0.8),
                                                                       legend.position="top",
@@ -334,6 +326,7 @@ number_plot_not_cumulative<- ggplot(df,aes(x=factor(group),y= distance,fill= typ
                                                                       axis.text.y = element_text(size = 12),
                                                                       axis.title.y = element_text(size = 14, vjust = -1)))
 
+                                                                      
 filename <- paste0("pos_neg_number_not_cumulative.pdf")
 pdf(filename, width = 14, height = 8)
 print(number_plot_not_cumulative)
@@ -342,11 +335,11 @@ print("done")
 
 
 #test significance
-df_per  <- data.frame(distance = c(pos_data,neg_data),
+distance_data  <- data.frame(distance = c(pos_data,neg_data),
                       group = c(50,100,150,200,250,300,350,400,50,100,150,200,250,300,350,400),type = rep(c(rep("pos",8),rep("neg", 8))))
 
 
-pos <- subset(df_per, type == "pos")
-neg <- subset(df_per, type == "neg")
+pos <- subset(distance_data, type == "pos")
+neg <- subset(distance_data, type == "neg")
 
 wilcox.test(pos$distance,neg$distance, paired = TRUE)
