@@ -1,5 +1,5 @@
 # Toy data for running Signature's LWLR and Community Detection (Demo)
-This "Demo" folder will act as your output directory from running _Cooler_. With _Cooler_, all results are generated in a separate folder for each dataset/cell type analyzed. In this case, 2 cell types would have been processed separately: H9hESCs and Astrocytes.  
+**This "Demo" folder will act as your output directory from running _Cooler_.** With _Cooler_, all results are generated in a separate folder for each dataset/cell type analyzed. In this case, 2 cell types would have been processed separately: H9hESCs and Astrocytes.  
 <br/>
 
 ## LWLR
@@ -49,7 +49,7 @@ We established Signature's Community Detection in a way that process cis and tra
    -  The script can be run efficiently on demo datasets using any computer. For a complete dataset collection (62 datasets), standard computers are suitable, but using HPC is advised for faster processing.
    -  The output will follow the same format as the previous step, containing merged data from all datasets in a single file.
    -  The output will be saved in the Demo folder, e.g., **Demo/average_1MB_network.txt**
-7. Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements.
+7. Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements
    -  This step is performant on both demo datasets and full datasets, accommodating any computer and HPC.
    -  The output will be a two-column file, with the first column representing the bin ID and the second column indicating the assigned community number.
    -  Parameters are set to yield 46 communities for full datasets, while demo datasets will result in fewer than 46 communities.
