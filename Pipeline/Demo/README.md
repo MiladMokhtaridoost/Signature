@@ -41,15 +41,16 @@ We established Signature's Community Detection in a way that process cis and tra
 2. Press Download ZIP
 3. Extract ZIP folder (_"Signature-main.zip"_) to your directory of choice 
 4. Navigate to *"Signature-main"*, then the directory *"Pipeline"*, then *"Community_Detection"*
-5. First, run data_processing.R script without any changes.
-   -  This can be run on Demo datasets very fast using any computer. We suggest to use HPC for full datasets running on different datasets in parallel.
-   -  The output will be a re-formatted version of cooler data for each dataset, including three columns. First two columns represent the ID of binA and binB in [chr]_[start_of_bin(MB)] format and the third column shows the Hi_C weight. For instance, ID 6_41 refers to chr6:41000000.42000000.  
-   -  The outputs will be saved in their corresponding folder (e.g.       **Demo/Astrocyte_Spine/Astrocyte_Spine_network.txt**)
-6. Secondly, run merge_networks.R to merge the Hi-C interaction weights of every single bin (cis and trans) of all datasets by taking the average of them.
-   -  This can be run on Demo datasets very fast using any computer. Normal computers can handle this code for full collection of datasets (62 datasets), however, for faster performance using HPC is suggested. 
-   -  The output will be in a same format as the previous step, but merged all datasets in one file.
-   -  The output will be saved in the Demo folder (**Demo/average_1MB_network.txt**)
-7. The final step is applying Community Detectipn on the merged Hi-C data. For more information, including requierements please read README file in Community_Detection folder.
-   -  This can be run on Demo datasets and full datasets very fast using any computer and HPC. 
-   -  The output will be a two-column file, first column shows the ID of a bin and the second column shows the assigned community number. The parameters set in a way that result with full datasets will be 46 communities. However, the Demo file will be resulted in less than 46 cpmmunities.
-   -  The final output will be saved in the Demo folder (**Demo/average_netwrok_comms.txt**)
+5. -  Execute **data_processing.R** script without modifications.
+   -  The script can be efficiently run on demo datasets using any standard computer. For full datasets, we recommend utilizing High-Performance Computing (HPC) to process different datasets in parallel.
+   -  The output will be a reformatted version of cooler data for each dataset, including three columns: binA ID, binB ID, and the corresponding Hi-C weight. IDs are in [chr]_[start_of_bin(MB)] format. For instance, ID 6_41 refers to chr6:41000000.42000000.  
+   -  Output files will be saved in their respective folders, e.g., **Demo/Astrocyte_Spine/Astrocyte_Spine_network.txt**
+6. -  Run the **merge_networks.R** script to merge Hi-C interaction weights of every bin (cis and trans) across all datasets by averaging them.
+   -  The script can be run efficiently on demo datasets using any computer. For a complete dataset collection (62 datasets), standard computers are suitable, but using HPC is advised for faster processing.
+   -  The output will follow the same format as the previous step, containing merged data from all datasets in a single file.
+   -  The output will be saved in the Demo folder, e.g., **Demo/average_1MB_network.txt**
+7. -  Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements.
+   -  This step is performant on both demo datasets and full datasets, accommodating any computer and HPC.
+   -  The output will be a two-column file, with the first column representing the bin ID and the second column indicating the assigned community number.
+   -  Parameters are set to yield 46 communities for full datasets, while demo datasets will result in fewer than 46 communities.
+   -  The final output will be saved in the Demo folder, e.g., **Demo/average_netwrok_comms.txt**
