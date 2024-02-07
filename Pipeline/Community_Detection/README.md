@@ -2,6 +2,9 @@
 
 We used Community Detection (CD) to explore spatial genome topology. CD generates clusters of cis and trans interaction frequencies, determines multi-way interactions, and visualizes the CD-derived results in genome topology maps.
 
+#### Requierements
+
+
 #### Input Data
 
 To perform CD, we utilized the average interaction frequency (from cooler) of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
