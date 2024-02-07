@@ -29,7 +29,7 @@ After the completion of the Community Detection step, each bin will be assigned 
    | 3_40  | 1                | 
    | 21_32  | 14                | 
 
-For example, ID name 1_176 refers to 
+For example, ID name 1_176 refers to the genomic region chr1:176000000-177000000. According to this example output 1_3 and 3_40 are in the same community.
 
 ## Scripts
 
