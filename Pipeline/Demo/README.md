@@ -52,5 +52,5 @@ We established Signature's Community Detection in a way that process cis and tra
 7. Execute **CD_pycombo.py** script to apply Community Detection on the merged Hi-C data. Refer to the README file in the **Community_Detection** folder for additional information and requirements
    -  This step is performant on both demo datasets and full datasets, accommodating any computer and HPC.
    -  The output will be a two-column file, with the first column representing the bin ID and the second column indicating the assigned community number.
-   -  Parameters are set to yield 46 communities for full datasets, while demo datasets will result in fewer than 46 communities.
+   -  Parameters are set to yield 46 communities for full datasets (line #31 of **CD_pycombo.py** script), while demo datasets will result in fewer than 46 communities.
    -  The final output will be saved in the Demo folder, e.g., **Demo/average_network_comms.txt**
