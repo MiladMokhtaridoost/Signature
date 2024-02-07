@@ -12,11 +12,19 @@ We used Community Detection (CD) to explore spatial genome topology. CD generate
 
 #### Input Data
 
-To perform CD, we utilized the average interaction frequency (from cooler) of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
+To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
 
 #### Utilizing Combo Algorithm
 
 We implemented the Combo algorithm, which is available through the pycombo Python package (https://pycombo.readthedocs.io/en/latest/), as a non-overlapping CD algorithm.
+
+
+#### Output
+After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities. Here is an example of output format:
+
+
+
+
 
 ## Scripts
 
