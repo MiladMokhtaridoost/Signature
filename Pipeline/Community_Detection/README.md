@@ -24,11 +24,6 @@ We implemented the Combo algorithm, which is available through the pycombo Pytho
 
 Data Preparation: In this phase, we prepared the data by converting the interaction frequencies (from cooler) for each interaction (cis and trans) across all datasets into a suitable format for subsequent CD analysis.
 
-Arguments: 
-1. Index of for loopr (for parallel computing) which should be pass from shell script ($1) to the R script
-2. Pathway to the dataset (folder that includes all datasets name with Hi-C data in them)
-3. Pathway for output data
-4. Resolution of Hi-C data (1000000 in this study)
 
 ### merge_netwroks.R
 In this step, we are computing the average interaction for each interaction across all datasets.
