@@ -30,7 +30,7 @@ Arguments:
 2. Pathway for output data
 
 ### CD_pycombo.py
-CD Application: Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes. 
+CD Application: Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes. 
 
 Arguments: 
 1. pathway to the average network data (output of the previous step)
