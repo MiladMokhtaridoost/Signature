@@ -106,3 +106,7 @@ After submitting batch_create_signature_files.sh, a new folder will be generated
    | Achr1.10000000.11000000Bchr10.0.1000000           | 1.420                 | 1.048                  |
    | Achr1.10000000.11000000Bchr10.100000000.101000000 | 1.752                 | 1.691                  |
    | Achr1.10000000.11000000Bchr10.10000000.11000000   | -1.181                | -0.499                 |
+
+ID format example: Achr1.10000000.11000000Bchr10.0.1000000 
+
+- interaction between chromosome 1 at 10,000,000-11,000,000 bp and chromosmoe 10 at 0-1,000,000 bp
