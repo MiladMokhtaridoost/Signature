@@ -56,15 +56,12 @@ For additional details, please refer to the **Demo** folder.
 ### 3. Run CD_pycombo.py
 Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes using pycombo. For installation guide and more information about pycombo please refer to  [https://pycombo.readthedocs.io/en/latest/](https://pypi.org/project/pycombo/).
 
-Arguments: 
-1. pathway to the average network data (output of the previous step)
-2. Pathway for output data
 
 ## Visualization
 The results obtained through CD analysis can be effectively visualized using the following tools:
 
 ### Gephi (https://gephi.org/)
-Gephi provides a versatile platform for visualizing and analyzing complex networks, making it an ideal choice for exploring the outcomes of CD in 'genome topology maps'.
+Gephi provides a versatile platform for visualizing and analyzing complex networks, making it an ideal choice for exploring the outcomes of CD in 'genome topology maps'. In this study, first, we plotted all bins using the ForceAtlas layout, with inter-community interactions excluded to ensure the distinct separation of bins belonging to individual communities. Subsequently, we incorporated structural edges to represent the physical connections between consecutive bins within each chromosome. We further optimized the network layout using the Fruchterman Reingold layout algorithm (using the parameters: area = 5000, gravity = 5, and speed = 10). 
 
 ### Helios web (https://github.com/filipinascimento/helios-web/)
 Helios Web offers a web-based solution for visualizing and interpreting the results of CD in 3D.
