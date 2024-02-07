@@ -35,9 +35,13 @@ For example, ID name 1_176 refers to the genomic region chr1:176000000-177000000
 
 ### data_processing.R
 
-Data Preparation: In this phase, we prepared the data by converting the interaction frequencies (from cooler) for each interaction (cis and trans) across all datasets into a network format suitable for subsequent CD analysis. Please refer to the Demo folder for more information (including available input toy data). Here is an example of output format:
+Data Preparation: In this phase, we prepared the data by converting the interaction frequencies (from cooler) for each interaction (cis and trans) across all datasets into a network format suitable for subsequent CD analysis. Please refer to the Demo folder for more information (including available input toy data). Here is an example of output format of one dataset:
 
-
+   | ID_chrA                                                | ID_chrB        | freq     |
+   |:--------------------------------------------------|:----------------------|:-----------------------|
+   | 1_3       | 1_3                 | 0.509514                  |
+   | 1_3 | 1_54                | 0.00311932                  |
+   | 2_160   | 8_76                | 0.000281252               |
 
 
 ### merge_netwroks.R
