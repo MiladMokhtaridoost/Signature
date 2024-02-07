@@ -2,7 +2,7 @@
 
 We used Community Detection (CD) to explore spatial genome topology. CD generates clusters of cis and trans interaction frequencies, determines multi-way interactions, and visualizes the CD-derived results in genome topology maps.
 
-#### Requierements
+#### Requirements
 - python/3.8.0
   
   - Pycombo (https://pypi.org/project/pycombo/) 
@@ -22,9 +22,14 @@ We implemented the Combo algorithm, which is available through the pycombo Pytho
 #### Output
 After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities. Here is an example of output format:
 
+   | ID name    | Community ID       | 
+   |:--------------------------------------------------|:----------------------|
+   | 1_3  | 1                 | 
+   | 1_176  | 23                 |
+   | 3_40  | 1                | 
+   | 21_32  | 14                | 
 
-
-
+For example, ID name 1_176 refers to 
 
 ## Scripts
 
