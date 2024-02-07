@@ -16,13 +16,13 @@ To perform CD, we utilized the average interaction frequency (from cooler) of ou
 
 #### Utilizing Combo Algorithm
 
-We implemented the Combo algorithm, which is available through the pycombo Python package (https://pycombo.readthedocs.io/en/latest/), as a non-overlapping CD algorithm. This approach comprises two fundamental steps:
+We implemented the Combo algorithm, which is available through the pycombo Python package (https://pycombo.readthedocs.io/en/latest/), as a non-overlapping CD algorithm.
 
 ## Scripts
 
 ### data_processing.R
 
-Data Preparation: In this phase, we prepared the data by converting the interaction frequencies (from cooler) for each interaction across all datasets into a suitable format for subsequent CD analysis.
+Data Preparation: In this phase, we prepared the data by converting the interaction frequencies (from cooler) for each interaction (cis and trans) across all datasets into a suitable format for subsequent CD analysis.
 
 Arguments: 
 1. Index of for loopr (for parallel computing) which should be pass from shell script ($1) to the R script
