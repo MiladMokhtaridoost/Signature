@@ -5,12 +5,9 @@ We used Community Detection (CD) to explore spatial genome topology. CD generate
 #### Requierements
 - python/3.8.0
   
-      - NetworkX 
-      - Pandas
-      - Pycombo 
+      - Pycombo (https://pypi.org/project/pycombo/) 
 
 - R/4.2.1
-
 
 
 #### Input Data
