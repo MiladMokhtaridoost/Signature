@@ -14,9 +14,9 @@ We used Community Detection (CD) to explore spatial genome topology. CD generate
 
 To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
 
-#### Utilizing Combo Algorithm
+#### Utilizing pycombo Algorithm
 
-We implemented the Combo algorithm, which is available through the pycombo Python package (https://pycombo.readthedocs.io/en/latest/), as a non-overlapping CD algorithm.
+We implemented the pycombo algorithm, which is available through the pycombo Python package, as a non-overlapping CD algorithm.
 
 
 #### Output
@@ -54,7 +54,7 @@ For additional details, please refer to the **Demo** folder.
 
 
 ### 3. Run CD_pycombo.py
-Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes using pycombo. For installation guide and more information about pycombo please refer to  https://pycombo.readthedocs.io/en/latest/ .
+Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes using pycombo. For installation guide and more information about pycombo please refer to  [https://pycombo.readthedocs.io/en/latest/](https://pypi.org/project/pycombo/).
 
 Arguments: 
 1. pathway to the average network data (output of the previous step)
