@@ -49,5 +49,4 @@ pdf(filename, width = 14, height = 8)
 print(tp2)
 dev.off()
 print("done") 
-# Write the data frame to a file
 write.csv(df, file = sprintf("%s/Cis_Trans_kmean_clustering(4 clusters).csv", outpath), row.names = TRUE)
