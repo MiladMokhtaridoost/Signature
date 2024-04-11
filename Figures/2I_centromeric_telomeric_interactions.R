@@ -22,7 +22,6 @@ theme_set(theme_bw() + theme(strip.background =element_rect(fill="#e7e5e2")) +
                   strip.background = element_rect(fill = "#E6E1EA"),
                   #remove space between facets
                   panel.spacing.x=unit(0, "lines"),
-                  #legend.key = element_blank(),
                   legend.background=element_blank(),
                   #legend background
                   legend.key = element_rect(fill = NA),
