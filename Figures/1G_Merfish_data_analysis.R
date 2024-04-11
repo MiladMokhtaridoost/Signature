@@ -264,39 +264,23 @@ neg <- as.numeric(neg)
 
 length(pos)
 pos_50 <-length( pos[pos<=50])
-pos_50
 pos_100 <- length(pos[pos>50 & pos<=100])
-pos_100
 pos_150 <- length(pos[pos>100 & pos<=150])
-pos_150
 pos_200 <- length(pos[pos>150 & pos<=200])
-pos_200
 pos_250 <- length(pos[pos>200 & pos<=250])
-pos_250
 pos_300 <- length(pos[pos>250 & pos<=300])
-pos_300
 pos_350 <- length(pos[pos>300 & pos<=350])
-pos_350
 pos_400 <- length(pos[ pos>350 &pos<=400])
-pos_400
 
 
 neg_50 <- length(neg[neg<=50])
-neg_50
 neg_100 <- length(neg[ neg>50 & neg<=100])
-neg_100
 neg_150 <- length(neg[neg>100 & neg<=150])
-neg_150
 neg_200 <- length(neg[neg>150 & neg<=200])
-neg_200
 neg_250 <- length(neg[neg>200 & neg<=250])
-neg_250
 neg_300 <- length(neg[neg>250 & neg<=300])
-neg_300
 neg_350 <- length(neg[neg>300 & neg<=350])
-neg_350
-neg_400 <- length(neg[neg>350 & neg<=400])
-neg_400 
+neg_400 <- length(neg[neg>350 & neg<=400]) 
 
 #########################################################
 #number of interactions in each region (not cumulative)
