@@ -16,7 +16,7 @@ cell3=
 #------------------------------------------------#
 
 #---------------EDIT ANALYSIS INFO---------------#
-path=/your/hpc/directory/Signature-main/Pipeline/LWLR
+path=/your/hpc/directory/Signature-main/Pipeline/LWPR
 coolerpath=/your/hpc/directory/Signature-main/Pipeline/Demo
 
 analysis=trans

@@ -57,7 +57,7 @@ prtT=1
 		echo "- - - - - -"
 		echo "Starting R"
 		echo "- - - - - -"
-			Rscript $in/cis_LWLR.R $out/$cell.cis_tmp $out/$cell.cis_tmp $in/LWLR_train_cis.R $res
+			Rscript $in/cis_LWPR.R $out/$cell.cis_tmp $out/$cell.cis_tmp $in/LWPR_train_cis.R $res
 			# cat all chrom files into one df with all zscores (even non-sig pvalues)
 			cat $out/$cell.cis_tmp/chr*.txt > $out/$cell.cis_tmp/tmp.zscores.cis.LOESS.txt
 			mv $out/$cell.cis_tmp/tmp.zscores.cis.LOESS.txt $out/$cell.cis_tmp/tmp.cis.$cell.$name.$res\_LOESS.all.txt
@@ -116,7 +116,7 @@ prtT=1
 		echo "Starting R"
 		echo "- - - - - -"
 			while IFS= read -r file ; do
-			Rscript $in/trans.pairwise_LWLR.R $file $out/$cell.trans.tmp $in/LWLR_train.R $res
+			Rscript $in/trans.pairwise_LWPR.R $file $out/$cell.trans.tmp $in/LWPR_train.R $res
 			done < "$list"
 			# cat all chrom files into one df with all zscores (even non-sig pvalues)
 			cat $out/$cell.trans.tmp/*trans.LOESS*.txt > $out/tmp.trans.$name.$cell.$res\_zscore_all.txt	 
@@ -193,9 +193,9 @@ prtT=1
 		echo "- - - - - -"
 		echo "Starting R"
 		echo "- - - - - -"
-			Rscript $in/trans.1vsAll_LWLR.R $out $out $in/LWLR_train.R $res
+			Rscript $in/trans.1vsAll_LWPR.R $out $out $in/LWPR_train.R $res
 		echo "- - - - - - - - - - - - - - - - - - - - - -"
-		echo "Complete: trans.1vsAll_LWLR.R"
+		echo "Complete: trans.1vsAll_LWPR.R"
 		echo "Aggregated files produced: $(find $out/*aggregated.txt | wc -l)"
 		echo "- - - - - - - - - - - - - - - - - - - - - -"
 		# cat all chrom files into one df with all zscores (even non-sig pvalues)
@@ -275,7 +275,7 @@ prtT=1
 		echo "- - - - - -"
 		echo "Starting R"
 		echo "- - - - - -"
-			Rscript $in/1vsAll.loess.trans.R $out $out $in/LWLR_train.R $res
+			Rscript $in/1vsAll.loess.trans.R $out $out $in/LWPR_train.R $res
 			# cat all chrom files into one df with all zscores (even non-sig pvalues)
 			cat $out/*aggregated.txt > $out/tmp.trans.$name.$cell.$res\_zscore.all.txt	
 			rm $out/*aggregated.txt

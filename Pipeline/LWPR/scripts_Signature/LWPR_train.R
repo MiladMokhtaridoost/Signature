@@ -1,4 +1,4 @@
-LWLR_train <- function(X_train, anchor, span_frac) {
+LWPR_train <- function(X_train, anchor, span_frac) {
 library(purrr)  
 
 ###############estimating interaction frequency using weighted regression################

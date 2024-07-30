@@ -1,4 +1,4 @@
-LWLR_train_cis <- function(X_train, distances, span_frac) {
+LWPR_train_cis <- function(X_train, distances, span_frac) {
   
   ###############estimating interaction frequency using weighted regression################
   

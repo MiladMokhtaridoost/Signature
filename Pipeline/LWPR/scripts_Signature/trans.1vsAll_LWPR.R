@@ -95,7 +95,7 @@ for (fold in 1:fold_count) {
     span_frac = span_size/length(unique(anchor))
     sprintf("smoothing parameter is %s", span_frac)
 
-    trained_set <- LWLR_train(X_train , anchor, span_frac)
+    trained_set <- LWPR_train(X_train , anchor, span_frac)
 
     M <-aggregate(loess_y ~ st1, trained_set, mean )
     X_test <- merge(X_test, M, by="st1")
@@ -120,7 +120,7 @@ sprintf("smoothing parameter is %s", span_frac)
 
 X_train <- interactions_table
 anchor <- interactions_table$st1
-interactions_table <- LWLR_train(X_train , anchor, span_frac)
+interactions_table <- LWPR_train(X_train , anchor, span_frac)
 
 #####weighted mean and standard deviation for each start point of anchor chromosome####
 
@@ -249,7 +249,7 @@ for (fold in 1:fold_count) {
     span_frac = span_size/length(unique(anchor))
     sprintf("smoothing parameter is %s", span_frac)
 
-    trained_set <- LWLR_train(X_train , anchor, span_frac)
+    trained_set <- LWPR_train(X_train , anchor, span_frac)
 
     M <-aggregate(loess_y ~ st_anchor, trained_set, mean )
     X_test <- merge(X_test, M, by="st_anchor")
@@ -276,7 +276,7 @@ sprintf("smoothing parameter is %s", span_frac)
   ###############estimating interaction frequency using weighted regression################
     X_train <- interactions_table
     anchor <- interactions_table$st_anchor
-    interactions_table <- LWLR_train(X_train , anchor, span_frac)
+    interactions_table <- LWPR_train(X_train , anchor, span_frac)
  
   #####weighted mean and standard deviation for each start point of anchor chromosome####
   
@@ -408,7 +408,7 @@ for (fold in 1:fold_count) {
 span_frac = span_size/length(unique(anchor))
     sprintf("smoothing parameter is %s", span_frac)
 
-    trained_set <- LWLR_train(X_train , anchor, span_frac)
+    trained_set <- LWPR_train(X_train , anchor, span_frac)
 
     M <-aggregate(loess_y ~ st_anchor, trained_set, mean )
     X_test <- merge(X_test, M, by="st_anchor")
@@ -436,7 +436,7 @@ sprintf("smoothing parameter is %s", span_frac)
 ###############estimating interaction frequency using weighted regression################
     X_train <- interactions_table
     anchor <- interactions_table$st_anchor
-    interactions_table <- LWLR_train(X_train , anchor, span_frac)
+    interactions_table <- LWPR_train(X_train , anchor, span_frac)
 
 
 #####weighted mean and standard deviation for each start point of anchor chromosome####
@@ -570,7 +570,7 @@ for (fold in 1:fold_count) {
 span_frac = span_size/length(unique(anchor))
     sprintf("smoothing parameter is %s", span_frac)
 
-    trained_set <- LWLR_train(X_train , anchor, span_frac)
+    trained_set <- LWPR_train(X_train , anchor, span_frac)
 
     M <-aggregate(loess_y ~ st_anchor, trained_set, mean )
     X_test <- merge(X_test, M, by="st_anchor")
@@ -598,7 +598,7 @@ sprintf("smoothing parameter is %s", span_frac)
 ###############estimating interaction frequency using weighted regression################
     X_train <- interactions_table
     anchor <- interactions_table$st_anchor
-    interactions_table <- LWLR_train(X_train , anchor, span_frac)
+    interactions_table <- LWPR_train(X_train , anchor, span_frac)
 
 #####weighted mean and standard deviation for each start point of anchor chromosome####
 
