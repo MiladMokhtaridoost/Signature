@@ -16,7 +16,7 @@ cell3=		# cell_type3_dataset_name  ex. [Aorta_Leung]
 #------------------------------------------------#
 
 #---------------EDIT ANALYSIS INFO---------------#
-path=            # /pathway/to/folder/this/script/is/in (/.../Signature-main/Pipeline/LWLR)
+path=            # /pathway/to/folder/this/script/is/in (/.../Signature-main/Pipeline/LWPR)
 coolerpath=      # /pathway/to/cooler/output
 
 analysis=        # either [cis] or [trans]

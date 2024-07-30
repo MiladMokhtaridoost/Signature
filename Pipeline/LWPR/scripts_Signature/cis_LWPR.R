@@ -44,7 +44,7 @@ interactions_table <- read.table(sprintf("%s/chr%s.bed",DATA_PATH, k))
 #interactions_table<-read.table("chr1chr2.txt")
 cat(sprintf("chr%s", k), sep="\n")
 
-#source("LWLR_train_cis.R")
+#source("LWPR_train_cis.R")
 source(Rscript_path)
 
 colnames(interactions_table)=c("chr1","st1","end1","chr2","st2","end2","dist","freq")
@@ -104,7 +104,7 @@ for (fold in 1:fold_count) {
     span_frac = span_size/length(unique(distances))
     sprintf("smoothing parameter is %s", span_frac)
     
-    trained_set <- LWLR_train_cis(X_train , distances, span_frac)
+    trained_set <- LWPR_train_cis(X_train , distances, span_frac)
     
     M <-aggregate(loess_y ~ dist, trained_set, mean )
     X_test <- merge(X_test, M, by="dist")
@@ -135,7 +135,7 @@ sprintf("smoothing parameter is %s", span_frac)
 
 X_train <- interactions_table
 distances <- interactions_table$dist
-interactions_table <- LWLR_train_cis(X_train , distances, span_frac)
+interactions_table <- LWPR_train_cis(X_train , distances, span_frac)
 
 #####weighted mean and standard deviation for each start point of anchor chromosome####
 
