@@ -12,7 +12,7 @@ We used Community Detection (CD) to explore spatial genome topology. CD generate
 
 #### Input Data
 
-To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
+To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction. WE have also analyzed different subsets (male, female, cardiovascular cells) of full compendium.  
 
 #### Utilizing pycombo Algorithm
 
