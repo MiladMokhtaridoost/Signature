@@ -20,7 +20,7 @@ We implemented the pycombo algorithm, which is available through the pycombo Pyt
 
 
 #### Output
-After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities. Here is an example of output format:
+After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities, as this entity resembles diploid human genomes. Here is an example of output format:
 
    | ID name    | Community ID       | 
    |:--------------------------------------------------|:----------------------|
