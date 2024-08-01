@@ -56,6 +56,15 @@ For additional details, please refer to the **Demo** folder.
 ### 3. Run CD_pycombo.py
 Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes using pycombo. For installation guide and more information about pycombo please refer to  [https://pycombo.readthedocs.io/en/latest/](https://pypi.org/project/pycombo/).
 
+### 4. Run construct_EdgeList.R (This is an intermidiate visualization step)
+This script is just for visualization purposes that is explained in the following paragraph. Using this script, we construct a chromosomal structure by connecting consecutive available (mapped) bins. The input of this script is genarated by the step 2 code (**merge_networks.R**), and the resulting output will be a two-column table that can be used as the input to Gephi for visualization. Here is an example of output format of one dataset:
+
+   | Source                                                | Target |
+   |:--------------------------------------------------|:-----------------------|
+   | 1_3       | 1_3                 |
+   | 1_3 | 1_54                |
+   | 2_160   | 8_76                |
+   
 
 ## Visualization
 The results obtained through CD analysis can be effectively visualized using the following tools:
