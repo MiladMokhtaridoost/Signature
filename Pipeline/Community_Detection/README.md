@@ -24,8 +24,8 @@ After the completion of the Community Detection step, each bin will be assigned 
 
    | ID name    | Community ID       | 
    |:--------------------------------------------------|:----------------------|
-   | 1_3  | 1                 | 
-   | 1_176  | 23                 |
+   | 6_0  | 6_1                 | 
+   | 6_1  | 6_2                 |
    | 3_40  | 1                | 
    | 21_32  | 14                | 
 
