@@ -12,7 +12,7 @@ We used Community Detection (CD) to explore spatial genome topology. CD generate
 
 #### Input Data
 
-To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction.
+To perform CD, we utilized the interaction frequency (including cis and trans) from cooler of our compendium of 62 individual Hi-C datasets (as detailed in the paper) for each interaction. WE have also analyzed different subsets (male, female, cardiovascular cells) of full compendium.  
 
 #### Utilizing pycombo Algorithm
 
@@ -20,12 +20,12 @@ We implemented the pycombo algorithm, which is available through the pycombo Pyt
 
 
 #### Output
-After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities. Here is an example of output format:
+After the completion of the Community Detection step, each bin will be assigned a community group number. The parameters are tuned to generate 46 distinct communities, as this entity resembles diploid human genomes. Here is an example of output format:
 
    | ID name    | Community ID       | 
    |:--------------------------------------------------|:----------------------|
-   | 1_3  | 1                 | 
-   | 1_176  | 23                 |
+   | 6_0  | 6_1                 | 
+   | 6_1  | 6_2                 |
    | 3_40  | 1                | 
    | 21_32  | 14                | 
 
@@ -56,12 +56,22 @@ For additional details, please refer to the **Demo** folder.
 ### 3. Run CD_pycombo.py
 Following data preparation, we executed the CD analysis using pycombo and set the parameters as "modularity_resolution=1.4" and "max_communities=46" (line 31) so the final result clusters nodes in 46 communities to resemble diploid (2n) genomes using pycombo. For installation guide and more information about pycombo please refer to  [https://pycombo.readthedocs.io/en/latest/](https://pypi.org/project/pycombo/).
 
+### 4. Run construct_EdgeList.R (This is an intermidiate visualization step)
+This script is just for visualization purposes that is explained in the following paragraph. Using this script, we construct a chromosomal structure by connecting consecutive available (mapped) bins. The input of this script is genarated by the step 2 code (**merge_networks.R**), and the resulting output will be a two-column table that can be used as the input to Gephi for visualization. Here is an example of output format of one dataset:
+
+   | Source                                                | Target |
+   |:--------------------------------------------------|:-----------------------|
+   | 7_56       | 7_57                 |
+   | 7_57 | 7_61                |
+   | 7_61   | 7_62                |
+   | 7_62   | 7_63                |
+   
 
 ## Visualization
 The results obtained through CD analysis can be effectively visualized using the following tools:
 
 ### Gephi (https://gephi.org/)
-Gephi provides a versatile platform for visualizing and analyzing complex networks, making it an ideal choice for exploring the outcomes of CD in 'genome topology maps'. In this study, first, we plotted all bins using the ForceAtlas layout, with inter-community interactions excluded to ensure the distinct separation of bins belonging to individual communities. Subsequently, we incorporated structural edges to represent the physical connections between consecutive bins within each chromosome. We further optimized the network layout using the Fruchterman Reingold layout algorithm (using the parameters: area = 5000, gravity = 5, and speed = 10). 
+To visualize a maximum of 24 chromosomes (gonosomes and autosomes) in human diploid cells, we set the number of possible communities to 46. This resembles the human genome and allows each community to include only one chromosome’s bin if there is an intra-chromosomal domain structure isolated from the rest of the genome. For the visual representation of genome topology, we used Gephi. To reflect the results of CD and to ensure clear separation between bins from different communities, we first optimized the visualization process. We excluded inter-community interactions and plotted all bins as nodes using the ForceAtlas layout, based on intra-community Hi-C interaction weights. This step ensured that bins within each community are plotted close together and separated from other communities which facilitates the visualization of each community in the genome topology map. The distribution across the topology map as a ‘mock nucleus’ resulted in 46 distinct networks, where bins with higher interaction weights in each community were placed closer together to facilitate visualizing their interactions. Next, we added the physical connections between consecutive bins as edges in the network and optimized the network layout using the Fruchterman Reingold layout algorithm (parameters: area = 5000, gravity = 5, speed = 10). This ensured that bins within the same community remained close together and we maintain structural connections between consecutive bins across chromosomes. In the final genome topology estimation, consecutive bins were positioned next to each other to allow outlining of the chromosomal structures. Moreover, bins within the same community were as close as the physical constraints allowed.
 
 ### Helios web (https://github.com/filipinascimento/helios-web/)
 Helios Web offers a web-based solution for visualizing and interpreting the results of CD in 3D.
