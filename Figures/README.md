@@ -60,20 +60,20 @@ Arguments:
 7. Output pathway for PDF
 <br/>
 
-## Figure 2D: AB compartment analysis
-Three scripts required: 2D_pt1_data_prepration.R, 2D_pt2_compartment_parallel.R, and 2D_pt3_merge_visualization.R
-### 2D_pt1_data_prepration.R
+## Figure 2C: AB compartment analysis
+Three scripts required: 2C_pt1_data_prepration.R, 2C_pt2_compartment_parallel.R, and 2C_pt3_merge_visualization.R
+### 2C_pt1_data_prepration.R
 Arguments:
 1. Signature zscore output data (significant interactions)
 2. Output pathway for the results
-### 2D_pt2_compartment_parallel.R
+### 2C_pt2_compartment_parallel.R
 Arguments:
 1. Index of cell types ($1 in the shell schedular script)
-2. Output pathway (argument 2 from 2D_pt1_data_prepration.R)
+2. Output pathway (argument 2 from 2C_pt1_data_prepration.R)
 3. Aggregated compartment table for all cell types (Table S4)
-###  2D_pt3_merge_visualization.R   
+###  2C_pt3_merge_visualization.R   
 Arguments:
-1. Output pathway (argument 2 from 2D_pt1_data_prepration.R)
+1. Output pathway (argument 2 from 2C_pt1_data_prepration.R)
 <br/>
 
 ## Figure 2F: PQ arm interaction analysis
