@@ -1,15 +1,6 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 <br/>
 
-## Figure 1G: Merfish comparison
-One script required: 1G_Merfish_data_analysis.R
-### 1G_Merfish_data_analysis.R
-Arguments:
-1. Signature qvalue output data (all interactions)
-2. Signature qvalue output data (positive significant interactions)
-3. Merfish genomic scale data (PMID: 25858977)
-<br/>
-
 ## Figure 1H: HiCAN comparison
 One script required: 1H_HiCAN_overlap.R
 ### 1H_HiCAN_overlap.R
@@ -157,4 +148,13 @@ Arguments:
 ### 5AB_pt2_alluvial_pqarm.R
 Arguments:
 1. Pathway to Rdata output (argument 5 from 5AB_pt1_prepare_data_pqarm.R)
+
+## Extended Figure 3C: Merfish comparison
+One script required: Ex.3C_Merfish_data_analysis.R
+### 1G_Merfish_data_analysis.R
+Arguments:
+1. Signature qvalue output data (all interactions)
+2. Signature qvalue output data (positive significant interactions)
+3. Merfish genomic scale data (PMID: 25858977)
+
 <br/>
