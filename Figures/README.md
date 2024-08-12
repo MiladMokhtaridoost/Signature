@@ -1,7 +1,7 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 <br/>
 
-## Figure 1J: Validation tickplots
+## Figure 1F: Validation tickplots
 Two scripts required: part 1 (signature_validation_data_processing.R) and part 2 (signature_validation_graphs.R)
 ### signature_validation_data_processing.R 
 Arguments: 
