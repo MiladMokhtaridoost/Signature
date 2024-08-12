@@ -1,16 +1,6 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 <br/>
 
-## Figure 1I: SPRITE comparison
-One script required: 1I_Sprite_overlap.R
-### 1I_Sprite_overlap.R
-Arguments: 
-1. SPRITE's nucleolar and active hubs (Table S2 PMID: 29887377)
-2. Signature qvalue output data (positive significant interactions) [GM12878]
-3. Output pathway for the results
-4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
-<br/>
-
 ## Figure 1J: Validation tickplots
 Two scripts required: part 1 (signature_validation_data_processing.R) and part 2 (signature_validation_graphs.R)
 ### signature_validation_data_processing.R 
@@ -155,7 +145,19 @@ One script required: Ex.3D_HiCAN_overlap.R
 Arguments: 
 1. HiCAN's top 100 nucleolar loci (Figure 2B PMID: 37013988)
 2. HiCAN's top 100 speckle loci (Figure 2B PMID: 370139881)
-3. Signature qvalue output data (positive significant interactions) [GM12878]
-4. Output pathway for the results
-5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
+
+ 
+## Extended Figure 3E: SPRITE comparison
+One script required: Ex.3E_Sprite_overlap.R
+### Ex.3E_Sprite_overlap.R
+Arguments: 
+1. SPRITE's nucleolar and active hubs (Table S2 PMID: 29887377)
+2. Signature qvalue output data (positive significant interactions) [GM12878]
+3. Output pathway for the results
+4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
+<br/>
+
+4. Signature qvalue output data (positive significant interactions) [GM12878]
+5. Output pathway for the results
+6. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
 <br/>
