@@ -318,6 +318,48 @@ dev.off()
 print("done")
 
 
+
+#test significance
+distance_data  <- data.frame(distance = c(pos_data,neg_data),
+                      group = c(50,100,150,200,250,300,350,400,50,100,150,200,250,300,350,400),type = rep(c(rep("pos",8),rep("neg", 8))))
+
+
+pos <- subset(distance_data, type == "pos")
+neg <- subset(distance_data, type == "neg")
+
+wilcox.test(pos$distance,neg$distance, paired = TRUE)
+
+
+
+
+
+####################cdf plot###################
+pos_data <- c(pos_50,pos_100,pos_150,pos_200,pos_250,pos_300,pos_350,pos_400)
+neg_data <- c(neg_50,neg_100,neg_150,neg_200,neg_250,neg_300,neg_350,neg_400) 
+distance_data  <- data.frame(distance = c(pos_data,neg_data),
+                  group = c(50,100,150,200,250,300,350,400,50,100,150,200,250,300,350,400),type = rep(c(rep("pos",8),rep("neg", 8))))
+
+
+pos_data <- distance_data[distance_data$type == "pos", ]
+pos_data$cumsum <-cumsum(pos_data$distance)
+neg_data <- distance_data[distance_data$type == "neg", ]
+pos_data$cdf <- pos_data$cumsum /sum(pos_data$distance,neg_data$distance)
+
+
+
+neg_data$cumsum <- cumsum(neg_data$distance)
+neg_data$cdf <- neg_data$cumsum /sum(pos_data$distance,neg_data$distance)
+#just test the pos and negative datasets with wilcox signed rank test
+
+
+wilcox.test(pos_data$distance,neg_data$distance)
+
+pdf("cdf_plot.pdf")
+plot(pos_data$group, pos_data$cumsum, type = "s",  xlab = "spatial distance MERFISH [nm]", ylab = "Cumulative Distribution Function")
+lines(neg_data$group, neg_data$cumsum,  type = "s",col = "red")
+legend("bottomright", legend = c("pos", "neg"), col = c("blue", "red"), lty = 1)
+dev.off()
+
 #test significance
 distance_data  <- data.frame(distance = c(pos_data,neg_data),
                       group = c(50,100,150,200,250,300,350,400,50,100,150,200,250,300,350,400),type = rep(c(rep("pos",8),rep("neg", 8))))
