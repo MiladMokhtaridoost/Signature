@@ -1,17 +1,6 @@
 # Figures in "Inter-chromosomal contacts demarcate genome topology along a spatial gradient"
 <br/>
 
-## Figure 1H: HiCAN comparison
-One script required: 1H_HiCAN_overlap.R
-### 1H_HiCAN_overlap.R
-Arguments: 
-1. HiCAN's top 100 nucleolar loci (Figure 2B PMID: 37013988)
-2. HiCAN's top 100 speckle loci (Figure 2B PMID: 370139881)
-3. Signature qvalue output data (positive significant interactions) [GM12878]
-4. Output pathway for the results
-5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
-<br/>
-
 ## Figure 1I: SPRITE comparison
 One script required: 1I_Sprite_overlap.R
 ### 1I_Sprite_overlap.R
@@ -151,10 +140,22 @@ Arguments:
 
 ## Extended Figure 3C: Merfish comparison
 One script required: Ex.3C_Merfish_data_analysis.R
-### 1G_Merfish_data_analysis.R
+### Ex.3C_Merfish_data_analysis.R
 Arguments:
 1. Signature qvalue output data (all interactions)
 2. Signature qvalue output data (positive significant interactions)
 3. Merfish genomic scale data (PMID: 25858977)
 
+<br/>
+
+
+## Extended Figure 3D: HiCAN comparison
+One script required: Ex.3D_HiCAN_overlap.R
+### Ex.3D_HiCAN_overlap.R
+Arguments: 
+1. HiCAN's top 100 nucleolar loci (Figure 2B PMID: 37013988)
+2. HiCAN's top 100 speckle loci (Figure 2B PMID: 370139881)
+3. Signature qvalue output data (positive significant interactions) [GM12878]
+4. Output pathway for the results
+5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
 <br/>
