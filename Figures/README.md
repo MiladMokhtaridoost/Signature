@@ -76,17 +76,17 @@ Arguments:
 1. Output pathway (argument 2 from 2C_pt1_data_prepration.R)
 <br/>
 
-## Figure 2F: PQ arm interaction analysis
-One script required: 2F_pq_arms_analysis.R
-### 2F_pq_arms_analysis.R
+## Figure 2E: PQ arm interaction analysis
+One script required: 2E_pq_arms_analysis.R
+### 2E_pq_arms_analysis.R
 Arguments:
 1. Cooler data
 2. Output pathway for the results
 <br/>
 
-## Figure 2G: PQ arm interaction distribution
-One script required: 2G_pq_interaction_distrubtion.R
-### 2G_pq_interaction_distrubtion.R
+## Figure 2F: PQ arm interaction distribution
+One script required: 2F_pq_interaction_distrubtion.R
+### 2F_pq_interaction_distrubtion.R
 Arguments:
 1. Signature qvalue output data (positive significant interactions)
 2. Output pathway for PDF
