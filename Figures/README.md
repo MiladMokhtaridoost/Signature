@@ -145,7 +145,10 @@ One script required: Ex.3D_HiCAN_overlap.R
 Arguments: 
 1. HiCAN's top 100 nucleolar loci (Figure 2B PMID: 37013988)
 2. HiCAN's top 100 speckle loci (Figure 2B PMID: 370139881)
-
+3. Signature qvalue output data (positive significant interactions) [GM12878]
+4. Output pathway for the results
+5. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
+<br/>
  
 ## Extended Figure 3E: SPRITE comparison
 One script required: Ex.3E_Sprite_overlap.R
@@ -157,7 +160,3 @@ Arguments:
 4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
 <br/>
 
-4. Signature qvalue output data (positive significant interactions) [GM12878]
-5. Output pathway for the results
-6. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
-<br/>
