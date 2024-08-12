@@ -92,12 +92,6 @@ Arguments:
 2. Output pathway for PDF
 <br/>
 
-## Figure 2I: Telomeric and centromeric analysis
-One script required: 2I_centromeric_telomeric_interactions.R (note: the pre-processing of data is same for figure 2J)
-### 2I_centromeric_telomeric_interactions.R
-Arguments:
-1. Signature qvalue output data (positive significant interactions)
-<br/>
 
 ## Figure 4A: K-means clustering
 One scripts required: 4A_Kmeans_clustering.R
@@ -160,3 +154,10 @@ Arguments:
 4. Tab-separated text file containing all of Signature's 1Mb bins and their annotated genes (genes comma separated)
 <br/>
 
+
+## Extended Figure 3P: Telomeric and centromeric analysis
+One script required: Ex.3P_centromeric_telomeric_interactions.R 
+### Ex.3P_centromeric_telomeric_interactions.R
+Arguments:
+1. Signature qvalue output data (positive significant interactions)
+<br/>
