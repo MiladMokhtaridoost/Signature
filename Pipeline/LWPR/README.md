@@ -5,8 +5,8 @@ Signature analyzes Hi-C/Omni-C data to estimate significant interactions for bot
 ## Requirements
 ### Runs on the Slurm Linux system (modify to your High Performance Computing system guidelines)
 Rough guidelines for requirements, based on running one dataset, highest resolutions available:
-   - Inter-chromosomal analysis (trans, max 500 Kb): ~4Gb memory, ~3hr runtime
-   - Intra-chromosomal analysis (cis, max 50 Kb): ~23Gb memory, ~1 day runtime
+   - Inter-chromosomal analysis (trans, 1 Mb): ~4Gb memory, ~3hr runtime
+   - Intra-chromosomal analysis (cis, 50 Kb): ~23Gb memory, ~1 day runtime
 ### Modules
    - bedtools/2.24.0
    - R/4.2.1
