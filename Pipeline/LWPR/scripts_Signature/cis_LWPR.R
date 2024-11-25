@@ -14,8 +14,8 @@ Resolution <- as.numeric(args[4])
 #Rscript_path <- args[3]
 #Resolution <- as.numeric(args[4])
 
-library(msir, lib="/hpf/largeprojects/pmaass/Signature/pipeline/signature/scr/Rlib-4.2.1")
-library(mclust, lib="/hpf/largeprojects/pmaass/Signature/pipeline/signature/scr/Rlib-4.2.1")
+library(msir)
+library(mclust)
 library(dplyr)
 library(parallel)
 library(MASS)
