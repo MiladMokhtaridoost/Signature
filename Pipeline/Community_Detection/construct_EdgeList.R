@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 
-comms <- read.table("./data/average_netwrok_comms.txt", sep = ",", header = T)
+comms <- read.table("./data/average_netwrok_cardio_comms.txt", sep = ",", header = T)
 comms <- comms %>% separate(ID.name, sep = "\\_", into = c("chr","st"), remove = FALSE)
 #comms$chr <- as.numeric(comms$chr)
 comms$st <- as.numeric(comms$st)
