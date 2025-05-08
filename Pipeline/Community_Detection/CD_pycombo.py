@@ -40,7 +40,7 @@ for node, c in communities[0].items():
 print(len(comms))
     
 ##### each node in a row
-with open(f'{data_folder}/average_network_comms.txt', 'w') as file:
+with open(f'{data_folder}/average_network_cardio_comms.txt', 'w') as file:
     # create a list to store the rows of the dataframe
     rows = []
     # initialize the community ID counter to 1
