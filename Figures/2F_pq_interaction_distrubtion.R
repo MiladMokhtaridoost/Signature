@@ -15,7 +15,6 @@ datafile <- args[1]
 out <- args[2]
 
 
-
 #_____get data ready____________________________________________________________
 
 # read in input data (pos sig qval)

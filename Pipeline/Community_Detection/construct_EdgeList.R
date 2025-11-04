@@ -1,7 +1,7 @@
 library(dplyr)
 library(tidyr)
 
-comms <- read.table("./data/average_netwrok_cardio_comms_46.txt", sep = ",", header = T)
+comms <- read.table("./data/average_netwrok_cardio_comms.txt", sep = ",", header = T)
 comms <- comms %>% separate(ID.name, sep = "\\_", into = c("chr","st"), remove = FALSE)
 #comms$chr <- as.numeric(comms$chr)
 comms$st <- as.numeric(comms$st)
@@ -27,5 +27,5 @@ colnames(edge_list_final) <- c("Source", "Target")
 edge_list_final <- edge_list_final %>% separate(Target, sep = "\\_", into = c("chr","st"), remove = FALSE)
 edge_list_final <- edge_list_final[,-4]
 
-write.table(edge_list_final, "./data/edgelist_average_netwrok_cardio.csv", sep = ",", row.names = F)
+write.table(edge_list_final, "./data/edgelist_average_netwrok.csv", sep = ",", row.names = F)
 

@@ -125,7 +125,6 @@ print(merged_compartment)
 write.table(merged_compartment, sprintf("%s/merged_compartment.txt", files_pathway), sep = "\t", quote = FALSE, row.names = FALSE)
 
 
-
 #_____________________________visualization__________________________________________
 
 colnames(merged_compartment) <- merged_compartment[1,]

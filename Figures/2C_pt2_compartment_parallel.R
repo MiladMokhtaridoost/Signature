@@ -78,7 +78,6 @@ cells <- c("Adrenal_gland_Schmitt.txt","Aorta_Leung.txt",
 cell <- cells[as.numeric(args[[1]])]
 cat(sprintf("cell = %s",cell), sep="\n")
 
-
   txt_df <- read.table(sprintf("%s/%s",outpath, cell), header = TRUE)
   compartment <- read.csv(compartment_data), header=T)
 
