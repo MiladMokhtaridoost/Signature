@@ -9,8 +9,8 @@ print(RESULT_PATH)
 
 
 
-library(msir, lib="/hpf/largeprojects/pmaass/Signature/pipeline/signature/scr/Rlib-4.2.1")
-library(mclust, lib="/hpf/largeprojects/pmaass/Signature/pipeline/signature/scr/Rlib-4.2.1")
+library(msir)
+library(mclust)
 library(dplyr)
 library(parallel) 
 library(MASS) 
@@ -311,3 +311,4 @@ mclapply(DATA_PATH, trans_cross2, mc.cores = numCores2)
 
 
 #warnings()
+
